@@ -1,0 +1,240 @@
+/* Notifications
+/* ---------------------------------------------------------- */
+
+/* Base notification style */
+.idl-notifications {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 7000;
+    display: flex;
+    flex-direction: column;
+}
+
+.idl-notifications-topright {
+    bottom: auto;
+    left: auto;
+    right: 20px;
+    top: 70px;
+}
+
+/* Base notification style */
+.idl-notification {
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    padding: 4px;
+    width: 220px;
+    border: $grey 1px solid;
+    background: rgba(255,255,255,0.9);
+    border-radius: 4px;
+    box-shadow: rgba(0,0,0,0.06) 0 1px 7px;
+    color: #808284;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    backdrop-filter: blur(4px);
+
+    &:hover {
+        cursor: pointer;
+
+        .idl-notification-content {
+            background: lighten($blue, 34%);
+        }
+    }
+
+    em {
+        color: $blue;
+        font-style: normal;
+    }
+}
+
+.idl-notification-content {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.idl-notification-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 6px 5px 5px;
+    background: #fff;
+    border-radius: 0 4px;
+    font-size: 7px;
+    line-height: 5px;
+
+    &:hover {
+        background: #fff;
+        color: $red;
+    }
+}
+
+.idl-notification-passive {
+    animation: fade-out;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+
+    &:hover {
+        animation: fade-in;
+    }
+}
+
+/* Red notification
+/* ---------------------------------------------------------- */
+
+.idl-notification-red {
+    border: lighten($red, 28%) 1px solid;
+
+    &:hover {
+
+        .idl-notification-content {
+            background: lighten($red, 40%);
+        }
+    }
+
+    em {
+        color: $red;
+    }
+}
+
+/* Green notification
+/* ---------------------------------------------------------- */
+
+.idl-notification-green {
+    border: lighten($green, 28%) 1px solid;
+
+    &:hover {
+
+        .idl-notification-content {
+            background: lighten($green, 40%);
+        }
+    }
+
+    em {
+        color: $green;
+    }
+}
+
+/* Alerts
+/* ---------------------------------------------------------- */
+
+/* Alert wrapper, top of screen */
+.idl-alerts {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base alert style */
+.idl-alert {
+    z-index: 1000;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 15px;
+    border-bottom: $grey 1px solid;
+
+    a {
+        text-decoration: underline;
+        font-weight: 400;
+        user-select: text;
+    }
+}
+
+.idl-alert-content {
+    font-size: 1.4rem;
+    line-height: 1.3em;
+    font-weight: 200;
+    user-select: text;
+}
+
+.idl-alert-close {
+    flex-shrink: 0;
+    margin-left: 20px;
+    padding: 5px;
+    font-size: 10px;
+    line-height: 10px;
+
+    &:hover {
+        color: $red;
+    }
+}
+
+/* Blue alert
+/* ---------------------------------------------------------- */
+
+.idl-alert-blue {
+    border-bottom: darken($blue, 10%) 1px solid;
+    background: $blue;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    .idl-alert-close:hover {
+        color: #fff;
+    }
+}
+
+/* Red alert
+/* ---------------------------------------------------------- */
+
+.idl-alert-red {
+    border-bottom: darken($red, 10%) 1px solid;
+    background: $red;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    .idl-alert-close:hover {
+        color: #fff;
+    }
+}
+
+/* Green alert
+/* ---------------------------------------------------------- */
+
+.idl-alert-green {
+    border-bottom: darken($green, 7%) 1px solid;
+    background: $green;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    .idl-alert-close:hover {
+        color: #fff;
+    }
+}
+
+/* Black alert
+/* ---------------------------------------------------------- */
+
+.idl-alert-black {
+    border-bottom: darken($darkgrey, 10%) 1px solid;
+    background: $darkgrey;
+    color: #fff;
+
+    a {
+        color: #fff;
+    }
+
+    .idl-alert-close:hover {
+        color: #fff;
+    }
+}
+
+/* Yellow alert
+/* ---------------------------------------------------------- */
+
+.idl-alert-yellow {
+    border-bottom: #e9ebb6 1px solid;
+    background: #fdffb6;
+}

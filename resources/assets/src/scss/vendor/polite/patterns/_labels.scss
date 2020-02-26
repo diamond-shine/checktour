@@ -1,0 +1,113 @@
+/* Labels
+/* ---------------------------------------------------------- */
+
+.label {
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    border-radius: 0.25em;
+    color: #fff;
+    vertical-align: baseline;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 75%;
+    line-height: 1;
+    font-weight: 300;
+
+    &:empty {
+        display: none;
+    }
+
+    .btn & {
+        position: relative;
+        top: -1px;
+    }
+
+    h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+        position: relative;
+        top: -0.18em;
+        display: inline-block;
+        padding: 0.2em 0.5em 0.25em;
+        font-size: 70%;
+        line-height: 70%;
+    }
+
+    @at-root {
+
+        a#{&} {
+        
+            &:hover, &:focus {
+                color: #fff;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* Label Colours
+/* ---------------------------------------------------------- */
+
+.label-default {
+    background-color: #a1adb3;
+    color: #fff;
+
+    &[href] {
+        color: #fff;
+
+        &:hover, &:focus {
+            background-color: darken(#a1adb3, 10%);
+        }
+    }
+}
+
+.label-alt {
+    background-color: #666;
+    color: #fff;
+
+    &[href] {
+        color: #fff;
+
+        &:hover, &:focus {
+            background-color: darken(#666, 10%);
+        }
+    }
+}
+
+.label-blue {
+    background-color: $blue;
+    color: #fff;
+
+    &[href] {
+        color: #fff;
+
+        &:hover, &:focus {
+            background-color: darken($blue, 10%);
+        }
+    }
+}
+
+.label-green {
+    background-color: $green;
+    color: #fff;
+
+    &[href] {
+        color: #fff;
+
+        &:hover, &:focus {
+            background-color: darken($green, 10%);
+        }
+    }
+}
+
+.label-red {
+    background-color: $red;
+    color: #fff;
+
+    &[href] {
+        color: #fff;
+
+        &:hover, &:focus {
+            background-color: darken($red, 10%);
+        }
+    }
+}

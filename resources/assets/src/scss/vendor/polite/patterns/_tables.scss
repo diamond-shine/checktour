@@ -1,0 +1,61 @@
+/* Tables
+/* ---------------------------------------------------------- */
+
+table, .table {
+    margin: 1.6em 0;
+    max-width: 100%;
+    width: 100%;
+    background-color: transparent;
+
+    th, td {
+        padding: 8px;
+        vertical-align: middle;
+        text-align: left;
+        line-height: 20px;
+    }
+}
+
+.table {
+    
+    th, td {
+        border-top: 1px solid $grey;
+    }
+
+    th {
+        color: $midgrey;
+    }
+
+    caption + thead tr:first-child,
+    colgroup + thead tr:first-child,
+    thead:first-child tr:first-child {
+
+        th, td {
+            border-top: 0;
+        }
+    }
+
+    tbody {
+
+        + tbody {
+            border-top: 2px solid $grey;
+        }
+
+        > tr:nth-child(odd) {
+
+            > th, > td {
+                background-color: lighten($grey, 10%);
+            }
+        }
+    }
+
+    table table {
+        background-color: #fff;
+    }
+
+    &.plain tbody > tr:nth-child(odd) {
+
+        > th, > td {
+            background: transparent;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+/* Nav Lists
+/* ---------------------------------------------------------- */
+
+.nav-list {
+    padding: 0;
+    max-width: 500px;
+    border: 1px solid #e0dfd7;
+    background: #fff;
+    border-radius: $border-radius;
+
+    &.nav-list-block {
+        max-width: none;
+    }
+}
+
+.nav-list-item {
+    position: relative;
+    display: block;
+    padding: 8px 40px 8px 12px;
+    color: $darkgrey;
+
+    &:hover {
+        background: lighten($grey, 10%);
+        cursor: pointer;
+    }
+
+    &:first-of-type {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+
+    &:last-of-type {
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+    }
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid #e0dfd7;
+    }
+
+    button {
+        cursor: pointer;
+        text-align: left;
+
+        &,
+        &:active {
+          color: #242628;
+        }
+    }
+
+    a {
+        color: $darkgrey;
+    }
+
+    b {
+        display: block;
+        font-size: 1.6rem;
+        line-height: 1.375;
+        font-weight: normal;
+    }
+
+    span {
+        display: block;
+        color: $midgrey;
+        font-size: 1.1rem;
+        line-height: 1.375;
+    }
+
+    i {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -0.9rem;
+        color: $midgrey;
+        font-size: 1.4rem;
+    }
+}

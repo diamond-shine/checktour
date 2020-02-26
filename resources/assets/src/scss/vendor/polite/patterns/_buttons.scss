@@ -1,0 +1,276 @@
+/* Buttons
+/* ---------------------------------------------------------- */
+
+/* Base button style */
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 9px 15px;
+    border: $grey 1px solid;
+    background: #fff;
+    background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
+    border-radius: $border-radius;
+    color: #808284;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: none;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    line-height: 1.428571429;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        border-color: $blue;
+        color: darken($blue, 10%);
+        text-decoration: none;
+    }
+
+    &:focus,
+    &:active:focus,
+    &.active:focus {
+        outline: 0 auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    &.disabled,
+    &[disabled] {
+        box-shadow: none;
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    fieldset[disabled] & {
+        box-shadow: none;
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    i {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/* Blue button
+/* ---------------------------------------------------------- */
+
+.btn-blue {
+    border-color: darken($blue, 10%);
+    background: $blue;
+    color: #fff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: darken($blue, 20%);
+        background: darken($blue, 10%);
+        color: #fff;
+    }
+}
+
+/* Green button
+/* ---------------------------------------------------------- */
+
+.btn-green {
+    border-color: darken($green, 10%);
+    background: $green;
+    color: #fff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: darken($green, 20%);
+        background: darken($green, 10%);
+        color: #fff;
+    }
+}
+
+/* Red button
+/* ---------------------------------------------------------- */
+
+.btn-red {
+    border-color: darken($red, 10%);
+    background: $red;
+    color: #fff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: darken($red, 20%);
+        background: darken($red, 10%);
+        color: #fff;
+    }
+}
+
+/* Orange button
+/* ---------------------------------------------------------- */
+
+.btn-orange {
+    border-color: darken($orange, 10%);
+    background: $orange;
+    color: #fff;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: darken($orange, 20%);
+        background: darken($orange, 10%);
+        color: #fff;
+    }
+}
+
+/* Orange button
+/* ---------------------------------------------------------- */
+
+.btn-active {
+    border-color: darken($grey, 10%);
+    background: $lightergrey;
+    color: $darkgrey;
+    cursor: default !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: darken($grey, 10%);
+        background: $lightergrey;
+        color: $darkgrey;
+    }
+}
+
+.btn-disabled {
+    border-color: darken($grey, 10%);
+    background: $grey;
+    color: #fff;
+    cursor: not-allowed !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: darken($grey, 10%);
+        background: $grey;
+        color: #fff;
+    }
+}
+
+/* Link button
+/* ---------------------------------------------------------- */
+
+/* For styling a button like a link */
+.btn-link {
+    border-color: transparent;
+    background: transparent;
+    color: $blue;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: transparent;
+        background: transparent;
+        color: $blue;
+        text-decoration: underline;
+        box-shadow: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+        box-shadow: none;
+        color: #b2b2b2;
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+}
+
+/* Minor button
+/* ---------------------------------------------------------- */
+
+/* For buttons with a small/insignificant action for
+// example a "cancel" button. Style is de-emphasised. */
+.btn-minor {
+    padding: 8px 15px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.2rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: #c1c1c1;
+        background: #fff;
+        box-shadow: none;
+        color: #808284;
+    }
+}
+
+/* Button size variations
+/* ---------------------------------------------------------- */
+
+.btn-lg {
+    padding: 12px 18px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    line-height: 1.33;
+}
+
+.btn-sm {
+    padding: 7px 10px;
+    border-radius: 2px;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    i {
+      font-size: 1.3rem;
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+
+    + .btn-block {
+        margin-top: 5px;
+    }
+}
+
+/* Specificity overrides */
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+    width: 100%;
+}
+
+/* Spin Buttons!
+/* ---------------------------------------------------------- */
+.spinner {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: -2px 0;
+    width: 14px;
+    height: 14px;
+    border: rgba(0,0,0,0.2) solid 4px;
+    border-radius: 100px;
+    animation: spin 1s linear infinite;
+
+    &:before {
+        content: "";
+        display: block;
+        margin-top: 6px;
+        width: 4px;
+        height: 4px;
+        background: rgba(0,0,0,0.6);
+        border-radius: 100px;
+    }
+}

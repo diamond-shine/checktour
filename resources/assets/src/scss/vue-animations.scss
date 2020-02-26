@@ -1,0 +1,27 @@
+.vue-anim-flip-list-move {
+    transition: transform 0.5s;
+}
+
+.ghost {
+    opacity: 0.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $g-sm;
+    border-bottom: 1px solid var(--layout-border-color);
+    text-decoration: none;
+    color: var(--body-color);
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 3px;
+        background-color: var(--list-item-active-bg);
+        transform: scaleX(0);
+        transform-origin: center left;
+    }
+}

@@ -1,0 +1,29 @@
+.c-table {
+  position: relative;
+  border-radius: $border-radius;
+  background-color: var(--body-bg);
+
+  &-add {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    &__btn {
+      border-radius: 0;
+      border-top-right-radius: $border-radius;
+      min-height: 60px;
+      min-width: 60px;
+    }
+  }
+
+  &-bottom {
+    position: sticky;
+    bottom: 0;
+    padding: 16px;
+    z-index: 1;
+    background-color: var(--body-bg);
+    border: 1px solid var(--layout-border-color);
+    margin-top: -1px;
+  }
+}

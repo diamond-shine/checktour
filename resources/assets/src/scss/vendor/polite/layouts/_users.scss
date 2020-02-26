@@ -1,0 +1,286 @@
+/* Users /polite/settings/users/
+/* ---------------------------------------------------------- */
+
+.users-list-wrapper {
+    overflow: auto;
+    height: 100%;
+}
+
+/* User list
+/* ---------------------------------------------------------- */
+
+.invited-users {
+    margin-bottom: 34px;
+}
+
+.list-title {
+    margin-bottom: 14px;
+    color: #a1a1a1;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    height: 68px;
+    border-top: 1px solid $grey;
+
+    &.auto-height {
+        height: auto;
+    }
+
+    &:last-child {
+        border-bottom: 1px solid $grey;
+    }
+
+    &.active {
+      border-left: 3px solid #87bcec;
+    }
+}
+
+/* Only apply these styles to anchor tags (pending invited are divs) */
+a.list-item {
+    text-decoration: none;
+}
+
+@media (min-width: 601px) {
+
+    a.list-item:hover {
+        background: lighten($grey, 10%);
+    }
+    a.list-item:last-of-type:hover {
+        box-shadow: inset 0 -1px 0 $grey;
+    }
+
+}
+
+.list-item-icon {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    background: $grey;
+    border-radius: 100%;
+    color: transparent;
+    font-size: 0;
+
+    &:before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        margin-top: -7px;
+        color: $midgrey;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+.list-item-figure {
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 35px;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+.list-item-image {
+    width: 60px;
+    height: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.list-item-body {
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 1.5;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  .list-item-image + & {
+      max-width: calc(100% - 60px);
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  .name {
+    display: block;
+    color: $darkgrey;
+    font-size: 15px;
+    font-weight: 400;
+    max-width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .description {
+    display: inline-block;
+    margin-top: 3px;
+    color: #a1a1a1;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .description-error {
+    display: inline-block;
+    margin-top: 3px;
+    color: $red;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+
+.list-item-aside {
+  white-space: nowrap;
+  font-size: 0;
+
+  // .list-action:not(:first-of-type) {
+  //   margin-left: 20px;
+  // }
+
+  .role-label {
+    margin-top: -1px;
+
+    + .role-label {
+      margin-left: 5px;
+    }
+  }
+}
+
+.list-action,
+.list-detail {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 11px;
+
+  .list-item-aside & {
+    margin-right: 20px;
+    display: inline-block;
+  }
+}
+
+.list-detail {
+  text-decoration: none;
+  color: #242628;
+}
+
+/* Role Labels
+/* ---------------------------------------------------------- */
+
+.role-label {
+  display: inline-block;
+  padding: 6px 8px;
+  background: #eee;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 400;
+
+  &.administrator {
+    background: $darkgrey;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.moderator {
+    background: $red;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.editor {
+    background: $blue;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.group {
+    background: $blue;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+}
+
+/* User invitation modal
+/* ---------------------------------------------------------- */
+
+.invite-new-user {
+
+  .form-group {
+    margin-bottom: 0;
+    padding: 0;
+
+    label {
+      position: static;
+      display: block;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    &:nth-of-type(1) {
+      float: left;
+      width: 60%;
+    }
+
+    &:nth-of-type(2) {
+      float: left;
+      margin-left: 5%;
+      width: 35%;
+    }
+  }
+
+  .btn-green {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .list-item {
+    padding: 12px 0;
+    height: 82px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .list-item-aside .role-label {
+    font-size: 8px;
+    margin-bottom: 6px;
+    vertical-align: middle;
+  }
+  .list-item-aside .list-action,
+  .list-item-aside .list-detail {
+    font-size: 8px;
+    margin-bottom: 6px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  .list-item-body {
+    padding-left: 0;
+    .name {
+      white-space: nowrap;
+    }
+  }
+}

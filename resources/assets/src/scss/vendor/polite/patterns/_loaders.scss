@@ -1,0 +1,9 @@
+.is-loading {
+    cursor: progress;
+    opacity: 0.5;
+    filter: grayscale(0.7);
+
+    a, button, label, input, select, .idl-select {
+        pointer-events: none;
+    }
+}

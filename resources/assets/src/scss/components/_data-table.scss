@@ -1,0 +1,48 @@
+.c-data-table {
+    .el-pagination {
+        padding-top: 15px;
+        padding-bottom: 0;
+        text-align: right;
+    }
+}
+
+.c-data-table-controls {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 20px;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.c-data-table-search {
+    width: 300px;
+}
+
+.c-data-table-actions {
+    button {
+        font-size: 16px;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        i {
+            padding-right: 10px;
+        }
+    }
+
+    .c-data-table-action {
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+    }
+}
+
+.c-data-table-filters {
+    position: relative;
+    width: 100%;
+}

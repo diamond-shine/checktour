@@ -1,0 +1,94 @@
+$color1: $lightgrey;
+$color2: $lightgrey;
+$color3: white;
+$switch-height: 30px;
+$switch-width: $switch-height;
+$knob-height: 24px;
+$translate-distance: $switch-width - 1px;
+$first-flag: rgb(52, 173, 222) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEUAW7sSZK7tzA3/1QDv4aFRAAAAq0lEQVR4Ae3NMQEAIAwDsJrEJCbBwd7uSAwkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbHaacpvymux2u91ut9vtdrvdbrfb7Xa73W632+12u91ut9vtdrvdbrfb7Xa73W63z+x2u91ut9vtdrvdbrfb7Xa73W632+12u91ut9vtdrvdbrfb7Xa73W632+12u91ut9vtdrvdbrfb7Xa73W632+32Dw/VnwagqA0HAAAAAElFTkSuQmCC") center center;
+$second-flag: rgb(209, 47, 61) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0BAMAAAA5+MK5AAAAGFBMVEX///+9zOgAMqMAOaYAOq2EMFLhKhbVKx7u4Vz4AAABmUlEQVR4Ae3PgQCAMAAEwFdIIYUUUkghhfSzqG1/Z3DhbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbrey1ctRSH5O6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urr6WStXrdy18tRSV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1cfywtQbv/gcv7tOQAAAABJRU5ErkJggg==") center center;
+
+.flag-switch {
+    position: relative;
+    outline: 0;
+    appearance: none;
+    perspective: 1000;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 60px;
+    height: $switch-height;
+    margin: 5px auto;
+    margin-right: 40px;
+
+    &::after,
+    &::before {
+        position: absolute;
+        color: $darkgrey;
+        font-family: $font-family;
+        top: 4px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        font-weight: 700;
+        z-index: 1;
+    }
+
+    &::before {
+        right: calc(100% + 6px);
+        content: attr(data-first-lang);
+    }
+
+    &::after {
+        left: calc(100% + 6px);
+        content: attr(data-second-lang);
+    }
+
+    input {
+        display: none;
+    }
+
+    input + label {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        user-select: none;
+        width: 60px;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            border-radius: 30px;
+            transition: all 0.25s ease-in-out;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+        }
+
+        &::before {
+            height: $switch-height;
+            width: $switch-width*2;
+            background-color: $color2;
+        }
+
+        &::after {
+            top: 3px;
+            left: 3px;
+            border: 2px solid #fff;
+            width: $knob-height;
+            height: $knob-height;
+            background: $second-flag;
+            background-size: cover;
+            transform: translate($translate-distance, 0);
+        }
+    }
+
+    input:checked + label::after {
+        background: $first-flag;
+        background-size: cover;
+        transition: all 0.25s ease-in-out;
+        transform: translate(0 ,0);
+    }
+
+    input:checked + label::before {
+        background-color: $color1;
+    }
+}

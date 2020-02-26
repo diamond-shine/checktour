@@ -1,0 +1,216 @@
+// Colors
+
+$white:                     #fff;
+$gray-100:                  #f5f7f8;
+$gray-200:                  #EBEFF2;
+$gray-300:                  #dfe1e3;
+$gray-400:                  #c9c9c9;
+$gray-500:                  #afafaf;
+$gray-600:                  #7d878a;
+$gray-700:                  #495057;
+$gray-800:                  #343a40;
+$gray-900:                  #242628;
+$black:                     #000;
+
+$blue:                      #5ba4e5;
+$indigo:                    #6610f2;
+$purple:                    #453ee1;
+$pink:                      #e83e8c;
+$red:                       #e25440;
+$orange:                    #f2a925;
+$yellow:                    #ffc107;
+$green:                     #67c23a;
+$teal:                      #20c997;
+$cyan:                      #17a2b8;
+
+$primary:                   #409EFF;
+$secondary:                   $gray-100;
+$success:                   #9fbb58;
+$info:                      #909399;
+$warning:                     $yellow;
+$danger:                      $red;
+$light:                       $gray-200;
+$gray:                        $gray-600;
+$dark:                        $gray-900;
+
+$colors: (
+  'white': var(--color-white),
+  'gray-1': var(--color-gray-1),
+  'gray-2': var(--color-gray-2),
+  'gray-3': var(--color-gray-3),
+  'gray-4': var(--color-gray-4),
+  'gray-5': var(--color-gray-5),
+  'gray-6': var(--color-gray-6),
+  'gray-7': var(--color-gray-7),
+  'gray-8': var(--color-gray-8),
+  'gray-9': var(--color-gray-9),
+  'black': var(--color-black),
+  'blue': var(--color-blue),
+  'indigo': var(--color-indigo),
+  'purple': var(--color-purple),
+  'pink': var(--color-pink),
+  'red': var(--color-red),
+  'orange': var(--color-orange),
+  'yellow': var(--color-yellow),
+  'green': var(--color-green),
+  'teal': var(--color-teal),
+  'cyan': var(--color-cyan),
+  'primary': var(--color-primary),
+  'secondary': var(--color-secondary),
+  'success': var(--color-success),
+  'info': var(--color-info),
+  'warning': var(--color-warning),
+  'danger': var(--color-danger),
+  'light': var(--color-light),
+  'gray': var(--color-gray),
+  'dark': var(--color-dark)
+);
+
+
+
+// Font
+
+$font-family-sans-serif:      "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif;
+
+$font-size-base:              1.4rem;
+$font-size-lg:                1.8rem;
+$font-size-md:                1.5rem;
+$font-size-sm:                1.3rem;
+$font-size-xs:                1.2rem;
+
+$h1-font-size:                3rem;
+$h2-font-size:                2.6rem;
+$h3-font-size:                2.4rem;
+$h4-font-size:                2.2rem;
+$h5-font-size:                2rem;
+$h6-font-size:                1.6rem;
+
+$fzs: (
+    base: $font-size-base,
+    lg: $font-size-lg,
+    md: $font-size-md,
+    xs: 1rem,
+    h1: $h1-font-size,
+    h2: $h2-font-size,
+    h3: $h3-font-size,
+    h4: $h4-font-size,
+    h5: $h5-font-size,
+    h6: $h6-font-size
+);
+
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-semibold:        600;
+$font-weight-bold:            700;
+
+$fws: (
+    light: $font-weight-light,
+    normal: $font-weight-normal,
+    semibold: $font-weight-semibold,
+    bold: $font-weight-bold
+);
+
+$lhs: (
+  0: 1,
+  1: 1.1,
+  2: 1.2,
+  3: 1.3,
+  4: 1.4,
+  5: 1.5,
+  6: 1.6,
+  7: 1.7,
+  8: 1.8,
+  9: 1.9,
+  10: 2
+);
+
+$line-height-base:            1.5;
+$line-height-headings:        1.2;
+
+
+
+// Grid / Margin / Padding
+
+$grid-columns:                12;
+$grid-gutter-width:           40px;
+
+$g:                           $grid-gutter-width;
+$g-xs:                        $g / 8;
+$g-sm:                        $g / 2;
+$g-md:                        $g-sm * 3;
+$g-lg:                        $g * 2;
+
+$o:                           30px;
+$o-xs:                        floor($o / 3);
+$o-sm:                        $o / 2;
+$o-md:                        $o-sm * 3;
+$o-lg:                        $o * 2;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    hd: 1340px,
+    laptop: 1420px,
+    desktop: 1660px,
+    fullhd: 1800px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    hd: 1260px,
+    laptop: 1380px,
+    desktop: 1620px,
+    fullhd: 1740px
+);
+
+$spacers: (
+  0: 0px,
+  3: 3px,
+  5: 5px,
+  7: 7px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: 30px,
+  35: 35px,
+  40: 40px,
+  50: 50px,
+  60: 60px,
+  70: 70px,
+  80: 80px,
+  90: 90px,
+  100: 100px
+);
+
+
+
+// Else
+
+$transition:                  .3s;
+$border-radius:               4px;
+$nav:                         250px;
+$media-sidebar:               350px;
+
+
+// vertical-align
+
+$vas: (
+  middle,
+  top,
+  bottom,
+  baseline,
+  text-top,
+  text-bottom,
+  sub,
+  super,
+  unset
+);

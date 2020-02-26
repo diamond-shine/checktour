@@ -1,0 +1,29 @@
+.c-icons-list {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        .icon {
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 22px;
+        }
+
+        a {
+            color: var(--body-color);
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

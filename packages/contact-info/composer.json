@@ -1,0 +1,19 @@
+{
+    "name": "shelter/contact-info",
+    "license": "proprietary",
+    "require": {
+        "propaganistas/laravel-phone": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shelter\\ContactInfo\\": "src/"
+        }
+    },
+    "extra": {
+        "shelter": {
+            "providers": [
+                "Shelter\\ContactInfo\\Providers\\ContactInfoServiceProvider"
+            ]
+        }
+    }
+}

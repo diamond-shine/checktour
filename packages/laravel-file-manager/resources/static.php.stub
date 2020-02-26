@@ -1,0 +1,316 @@
+<?php
+
+ignore_user_abort(true);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$doenv = new \Dotenv\Dotenv(__DIR__ . '/../');
+$doenv->load();
+
+$watermarks = [
+    'default' => [
+        'file' => 'static/content/logo.png',
+        'position' => 'bottom-right',
+        'offsets' => [
+            'x' => 10,
+            'y' => 10,
+        ],
+    ],
+];
+
+/*
+|--------------------------------------------------------------------------
+| Create static files miner
+|--------------------------------------------------------------------------
+|
+| Handles requests to nonexistent static files,
+| analyzes and modifies the URL file before he was sent to http response,
+| and stores the processed file and next time have
+| to give the finished file is not causing this script
+|
+ */
+
+$miner = new \Ideil\ImageMiner\Miner(
+    Symfony\Component\HttpFoundation\Request::createFromGlobals(),
+    '~/[a-z\d]{1}/[a-z\d]{2}/.+$~',
+    [
+        'external_tokens' => [
+            env(
+                'FILE_MANAGER_TOKEN',
+                env('APP_KEY')
+            ),
+        ],
+    ]
+);
+
+$miner->setRequestFilePathResolver(function (string $path) {
+    $parts = explode(
+        '/',
+        trim($path, '/')
+    );
+    $fileNameParts = explode('--', $parts[2]);
+
+    $fileName = end($fileNameParts);
+
+    return "/{$parts[0]}/{$parts[1]}/{$fileName}";
+});
+
+/*
+|--------------------------------------------------------------------------
+| Configure
+|--------------------------------------------------------------------------
+|
+| Setup basic settings
+|
+ */
+
+$miner->setDevModeActivity(env('APP_DEBUG'));
+
+$miner->setUriRoot('/content/thumbs/');
+
+$miner->setHandledFilesRoot(__DIR__ . '/../static');
+
+$miner->setOriginalFilesRoot(__DIR__ . '/../static/content/files');
+
+$miner->setCleanUriResolver(function ($uri) {
+    return str_replace(
+        env('APP_STATIC_URL_PREFIX', ''),
+        '',
+        $uri
+    );
+});
+
+/*
+|--------------------------------------------------------------------------
+| Register thumb handlers
+|--------------------------------------------------------------------------
+|
+| Register handlers for processing files
+|
+ */
+
+// Crop processing
+// Example: URL must contain a fragment /0x0-100x100/
+
+$miner->addConversion('crop1', '/.*/', function ($image, $matches) use ($watermarks) {
+    $uri = $matches[0];
+
+    [$payload, $folder1, $folder2, $fullFileName] = explode(
+        '/',
+        trim($uri, '/')
+    );
+
+    $fileNameParts = explode(
+        '--',
+        preg_replace('/^\w{6}\-/', '', $fullFileName)
+    );
+
+    $selectedConversions = [
+        'fit' => false,
+        'background_color' => null,
+        'watermark' => null,
+        'crop' => null,
+    ];
+
+    if (count($fileNameParts) === 2) {
+        $conversionString = $fileNameParts[0];
+
+        foreach (explode('-', $conversionString) as $conversion) {
+            $conversionMatches = [];
+
+            if ($conversion === 'f') {
+                $selectedConversions['fit'] = true;
+            }
+
+            if (preg_match('/bc([0-9a-f]{6})/', $conversion, $conversionMatches)) {
+                $selectedConversions['background_color'] = $conversionMatches[1];
+            }
+
+            if ($conversion === 'bcnone') {
+                $selectedConversions['background_color'] = 'none';
+            }
+
+            if ($conversion === 'w') {
+                $selectedConversions['watermark'] = true;
+            }
+
+            if (preg_match('/w(\w+)/', $conversion, $conversionMatches)) {
+                $selectedConversions['watermark'] = $conversionMatches[1];
+            }
+
+            if ($conversion === 'c') {
+                $selectedConversions['crop'] = true;
+            }
+
+            if (preg_match('/c(\d+)x(\d+)/', $conversion, $conversionMatches)) {
+                $selectedConversions['crop'] = [$conversionMatches[1], $conversionMatches[2]];
+            }
+
+            if (preg_match('/c(\d+)x(\d+)x(\d+[p]?)x(\d+[p]?)/', $conversion, $conversionMatches)) {
+                $selectedConversions['crop'] = [
+                    $conversionMatches[1],
+                    $conversionMatches[2],
+                    $conversionMatches[3],
+                    $conversionMatches[4],
+                ];
+            }
+
+            if (preg_match('/c\*x\*x(\d+[p]?)x(\d+[p]?)/', $conversion, $conversionMatches)) {
+                $selectedConversions['crop'] = [
+                    null,
+                    null,
+                    $conversionMatches[1],
+                    $conversionMatches[2],
+                ];
+            }
+        }
+    }
+
+    $payloadMatches = [];
+
+    $cropIfNeed = function ($image, $width = null, $height = null) use ($selectedConversions) {
+        if (! $selectedConversions['crop']) {
+            return $image;
+        }
+
+        $x = null;
+        $y = null;
+
+        if (is_array($selectedConversions['crop'])
+            && count($selectedConversions['crop']) === 2
+        ) {
+            [$width, $height] = $selectedConversions['crop'];
+        }
+
+        if (is_array($selectedConversions['crop'])
+            && count($selectedConversions['crop']) === 4
+        ) {
+            $width = $selectedConversions['crop'][0] ?? $width;
+            $height = $selectedConversions['crop'][1] ?? $height;
+
+            $x = $selectedConversions['crop'][2];
+            $y = $selectedConversions['crop'][3];
+
+            if (ends_with($x, 'p')) {
+                $x = ceil(
+                    str_replace('p', '', $x) * $image->width() / 100
+                );
+            }
+
+            if (ends_with($y, 'p')) {
+                $y = ceil(
+                    str_replace('p', '', $y) * $image->height() / 100
+                );
+            }
+        }
+
+        if (! isset($width, $height)) {
+            return $image;
+        }
+
+        return $image->crop($width, $height, $x, $y);
+    };
+
+    // Fit image to size
+    if (preg_match('/(\d+)\*(\d+)/', $payload, $payloadMatches)) {
+        $cropIfNeed($image, $payloadMatches[1], $payloadMatches[2]);
+
+        $image->fit($payloadMatches[1], $payloadMatches[2]);
+    }
+
+    // Resize image with background
+    if (preg_match('/(\d+)\-(\d+)/', $payload, $payloadMatches)) {
+        $cropIfNeed($image, $payloadMatches[1], $payloadMatches[2]);
+
+        $image->resize($payloadMatches[1], $payloadMatches[2], function ($constraint) use ($selectedConversions) {
+            $constraint->aspectRatio();
+
+            if (! $selectedConversions['fit']) {
+                $constraint->upsize();
+            }
+        });
+
+        $backgroundColor = $selectedConversions['background_color'] ?? 'ffffff';
+
+        $image->resizeCanvas(
+            $payloadMatches[1],
+            $payloadMatches[2] ?: null,
+            'center',
+            false,
+            $backgroundColor === 'none' ? [255, 255, 255, 0] : "#{$backgroundColor}"
+        );
+    }
+
+    // Resize image
+    if (preg_match('/(\d*)x(\d*)/', $payload, $payloadMatches)) {
+        $cropIfNeed($image, $payloadMatches[1] ?? null, $payloadMatches[2] ?? null);
+
+        if (empty($payloadMatches[1])) {
+            return $image->heighten($payloadMatches[2], function ($constraint) use ($selectedConversions) {
+                if (! $selectedConversions['fit']) {
+                    $constraint->upsize();
+                }
+            });
+        }
+
+        if (empty($payloadMatches[2])) {
+            return $image->widen($payloadMatches[1], function ($constraint) use ($selectedConversions) {
+                if (! $selectedConversions['fit']) {
+                    $constraint->upsize();
+                }
+            });
+        }
+
+        return $image->fit($payloadMatches[1], $payloadMatches[2], function ($constraint) use ($selectedConversions) {
+            if (! $selectedConversions['fit']) {
+                $constraint->upsize();
+            }
+        });
+    }
+
+    if ($selectedConversions['watermark'] || isset($watermarks[$selectedConversions['watermark']])) {
+        $watermarkName = $selectedConversions['watermark'] === true ? 'default' : $selectedConversions['watermark'];
+        $watermarkData = $watermarks[$watermarkName];
+        $watermarkFilePath = dirname(__DIR__) . '/' . $watermarkData['file'];
+
+        if (file_exists($watermarkFilePath)) {
+            $image->insert(
+                $watermarkFilePath,
+                $watermarkData['position'],
+                $watermarkData['offsets']['x'],
+                $watermarkData['offsets']['y']
+            );
+        }
+    }
+
+    return $image;
+});
+
+/*
+|--------------------------------------------------------------------------
+| Run
+|--------------------------------------------------------------------------
+|
+| Execute all handlers and send response
+|
+ */
+
+$miner->handle() ? $miner->handle()->send() : null;
+
+if (file_exists('optimize.php')) {
+    require_once('optimize.php');
+
+    if ($prefix = env('APP_STATIC_URL_PREFIX')) {
+        $requestUri = str_replace($prefix, '', $_SERVER['REQUEST_URI']);
+    } else {
+        $requestUri = $_SERVER['REQUEST_URI'];
+    }
+
+    $filepath = sprintf(
+        '%s/%s',
+        rtrim(__DIR__ . '/../static', '/'),
+        ltrim($requestUri, '/')
+    );
+
+    optimize($filepath);
+}

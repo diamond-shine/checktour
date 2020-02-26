@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor 5 – classic editor build – development sample</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CKEditor 5</h1>
+
+    <div id="classic-editor">
+        <h2>Classic</h2>
+
+        <p>This is an instance of the lore <a
+                href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic
+                editor build</a>.</p>
+
+        <h3>Resize me!</h3>
+
+        <figure class="image">
+            <img src="https://ckeditor.com/docs/ckeditor5/latest/assets/img/fields.jpg" alt="Autumn fields">
+            <figcaption>Autumn fields by Aleksander Nowodziński</figcaption>
+        </figure>
+
+        <p>You can use this sample to validate whether your <a
+                href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html">custom
+                build</a> works fine.</p>
+    </div>
+
+    <div id="word-count"></div>
+
+    <div id="inline-editor">
+        <h2>Inline</h2>
+
+        <p>This is an instance of the <a
+                href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic
+                editor build</a>.</p>
+
+        <h3>Resize me!</h3>
+
+        <figure class="image">
+            <img src="https://ckeditor.com/docs/ckeditor5/latest/assets/img/fields.jpg" alt="Autumn fields">
+            <figcaption>Autumn fields by Aleksander Nowodziński</figcaption>
+        </figure>
+
+        <p>You can use this sample to validate whether your <a
+                href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html">custom
+                build</a> works fine.</p>
+    </div>
+
+    <div id="balloon-editor">
+        <h2>Balloon</h2>
+
+        <p>This is an instance of the <a
+                href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic
+                editor build</a>.</p>
+
+        <h3>Resize me!</h3>
+
+        <figure class="image">
+            <img src="https://ckeditor.com/docs/ckeditor5/latest/assets/img/fields.jpg" alt="Autumn fields">
+            <figcaption>Autumn fields by Aleksander Nowodziński</figcaption>
+        </figure>
+
+        <p>You can use this sample to validate whether your <a
+                href="https://docs.ckeditor.com/ckeditor5/latest/builds/guides/development/custom-builds.html">custom
+                build</a> works fine.</p>
+    </div>
+
+    <script src="../build/ckeditor.js"></script>
+    <!-- <script src="../node_modules/@ckeditor/ckeditor5-inspector/build/inspector.js"></script> -->
+
+    <script>
+        const link = {
+                decorators: {
+                    addTargetToLinks: {
+                        mode: 'manual',
+                        label: 'Відкрити в новому вікні',
+                        attributes: {
+                            target: '_blank',
+                            rel: 'noopener noreferrer'
+                        }
+                    },
+                    detectDownloadable: {
+                        mode: 'manual',
+                        label: 'Завантажування',
+                        attributes: {
+                            download: 'download'
+                        }
+                    }
+                }
+        };
+
+        const typing = {
+            transformations: {
+                extra: [
+                    { from: ':)', to: '🙂' },
+                    { from: ':+1:', to: '👍' },
+                    { from: ':tada:', to: '🎉' },
+                    {
+                        from: /(^|\s)(")([^"]*)(")$/,
+                        to: [ null, '«', null, '»' ]
+                    },
+                    {
+                        from: /(\. )([a-z]|[\wа-я])$/,
+                        to: matches => [ null, matches[ 1 ].toUpperCase() ]
+                    }
+                ],
+            }
+        };
+
+        const mention = {
+            feeds: [
+                {
+                    marker: '@',
+                    feed: ['@Barney', '@Lily', '@Marshall', '@Robin', '@Ted'],
+                    minimumCharacters: 1
+                },
+                {
+                    marker: ':',
+                    feed: [':order', ':delivery'],
+                    minimumCharacters: 2
+                }
+            ]
+        };
+
+        Ckeditor.ClassicEditor.create(document.querySelector('#classic-editor'), {
+            link: link,
+            mention: mention,
+            typing: typing
+        })
+        .then(editor => {
+            // CKEditorInspector.attach( editor );
+
+            const wordCountPlugin = editor.plugins.get( 'WordCount' );
+            const wordCountWrapper = document.getElementById( 'word-count' );
+
+            wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
+
+            // editor.data.stringify = modelElementOrFragment => {
+            //     const data = {
+            //         root: modelElementOrFragment.toJSON(),
+            //         children: Array.from( modelElementOrFragment.getChildren() ).map( child => child.toJSON() )
+            //     };
+
+            //     return JSON.stringify( data );
+            // };
+
+            window.classicEditor = editor;
+        })
+        .catch(err => {
+            console.error(err.stack);
+        });
+
+        Ckeditor.InlineEditor.create(document.querySelector('#inline-editor'), {
+            link: link,
+            mention: mention,
+            typing: typing
+        })
+        .then(editor => {
+            // CKEditorInspector.attach( editor );
+            window.inlineEditor = editor;
+        })
+        .catch(err => {
+            console.error(err.stack);
+        });
+
+        Ckeditor.BalloonEditor.create(document.querySelector('#balloon-editor'), {
+            link: link,
+            mention: mention,
+            typing: typing
+        })
+        .then(editor => {
+            // CKEditorInspector.attach( editor );
+            window.balloonEditor = editor;
+        })
+        .catch(err => {
+            console.error(err.stack);
+        });
+    </script>
+
+</body>
+
+</html>

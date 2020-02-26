@@ -1,0 +1,19 @@
+{
+    "name": "shelter/guard",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Shelter\\Guard\\": "src/"
+        }
+    },
+    "extra": {
+        "shelter": {
+            "providers": [
+                "Shelter\\Guard\\Providers\\GuardServiceProvider"
+            ],
+            "aliases": {
+                "ShelterAuth": "Shelter\\Guard\\Facades\\ShelterAuth"
+            }
+        }
+    }
+}

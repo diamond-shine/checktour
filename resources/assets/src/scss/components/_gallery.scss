@@ -1,0 +1,16 @@
+.c-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 600px;
+    // margin: floor($o-sm / 2) * -1;
+    margin: -2px;
+
+    &__item {
+        padding: floor($o-sm / 2);
+    }
+
+    &--with-main &__item:first-child {
+                    grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+    }
+}

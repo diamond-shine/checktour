@@ -1,0 +1,49 @@
+.c-nav-list {
+    list-style: none;
+    padding-left: 0;
+    margin: $g-sm 0;
+    border: 1px solid var(--nav-list-border-color);
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    &__item {
+        position: relative;
+        padding: $o-xs;
+        padding-right: $o-xs * 2 + 14px;
+        line-height: $line-height-headings;
+        transition: background-color $transition;
+        cursor: pointer;
+        overflow: hidden;
+
+        &-title {
+            font-size: $h6-font-size;
+        }
+
+        &-description {
+            margin-top: 3px;
+            font-size: 1.1rem;
+            color: $gray;
+        }
+
+        &-title, &-description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            right: $o-xs;
+            transform: translateY(-50%);
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--nav-list-border-color);
+        }
+
+        &:hover {
+            background-color: var(--nav-list-item-hover-bg);
+        }
+    }
+}

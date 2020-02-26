@@ -1,0 +1,194 @@
+/* Modals
+/* ---------------------------------------------------------- */
+
+
+/* Context menu modal for material creation
+/* ---------------------------------------------------------- */
+
+.create-menu {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Fullscreen Modal
+/* ---------------------------------------------------------- */
+
+.fullscreen-modal-liquid-target {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.fullscreen-modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 810;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.fullscreen-modal {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-width: 530px;
+    width: 100%;
+    pointer-events: auto;
+    z-index: 810;
+
+    .image-uploader, .pre-image-uploader {
+        margin: 0;
+    }
+}
+
+.fullscreen-modal-wide {
+    width: 530px;
+}
+
+.fullscreen-modal-action {
+    padding: 60px 0 30px;
+    top: 0px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(0px) translateZ(0px);
+}
+
+/* Modal content
+/* ---------------------------------------------------------- */
+
+.modal-content {
+    position: relative;
+    padding: 18px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: $border-radius;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 6px;
+
+    * {
+        user-select: text;
+    }
+
+    .close {
+        position: absolute;
+        top: 19px;
+        right: 19px;
+        z-index: 9999;
+        margin: 0;
+        padding: 0;
+        width: 16px;
+        border: 0;
+        color: #808284;
+    }
+
+    .close:hover {
+        color: $darkgrey;
+    }
+}
+
+.modal-header {
+    position: relative;
+    margin-bottom: 18px;
+
+    h1 {
+        display: inline-block;
+        margin: 0 25px 0 0;
+        font-size: 1.85em;
+        font-weight: 100;
+    }
+}
+
+.modal-body {
+    position: relative;
+
+    .red {
+        color: $red;
+    }
+
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .login-form {
+        display: block;
+
+        .password-wrap input {
+            width: 100%;
+        }
+    }
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+
+    button, a.btn {
+        margin-left: 8px;
+        min-width: 100px;
+        text-align: center;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
+
+    .idl-tabs {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .fullscreen-modal {
+        padding: 10px;
+    }
+
+    .fullscreen-modal-wide {
+        width: 100%;
+    }
+
+    .fullscreen-modal-action {
+        padding: 30px 15px;
+    }
+
+    .modal-body {
+
+        .login-form {
+            margin: 0 auto;
+            max-width: 264px;
+
+            .password-wrap {
+                margin: 0 auto 1em;
+                width: 100%;
+            }
+
+            .btn {
+                margin: 0;
+                margin-bottom: 1em;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 901px) {
+
+    .modal-body {
+
+        .login-form {
+            display: flex;
+
+            .password-wrap {
+                flex: 1;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,300 @@
+.u-fz {
+    @each $name, $fz in $fzs {
+        &-#{$name} {
+            font-size: $fz;
+        }
+    }
+}
+
+.u-fw {
+    @each $name, $fw in $fws {
+        &-#{$name} {
+            font-weight: $fw;
+        }
+    }
+}
+
+.u-lh {
+    @each $name, $lh in $lhs {
+        &-#{$name} {
+            line-height: $lh;
+        }
+    }
+}
+
+.u-color {
+    @each $name, $color in $colors {
+        &-#{$name} {
+            color: $color;
+        }
+    }
+}
+
+.u-bg {
+    background-color: var(--layout-bg);
+
+    @each $name, $color in $colors {
+        &-#{$name} {
+            background-color: $color;
+        }
+    }
+}
+
+.u-btn-icon {
+    &-primary {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+    &-secondary {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-secondary);
+        }
+    }
+    &-success {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-success);
+        }
+    }
+    &-info {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-info);
+        }
+    }
+    &-warning {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-warning);
+        }
+    }
+
+    &-danger {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-danger);
+        }
+    }
+    &-gray {
+        color: currentColor;
+
+        &:hover {
+            color: var(--color-gray);
+        }
+    }
+}
+
+.u-text {
+    &-center {
+        text-align: center;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+.u-va {
+    @each $value in $vas {
+        &-#{$value} {
+            vertical-align: $value;
+        }
+    }
+}
+
+.u-radius {
+    border-radius: $border-radius;
+
+    &-lg {
+        border-radius: 10px;
+    }
+}
+
+.u-border {
+    border: 1px solid var(--layout-border-color);
+
+    &-top {
+        border-top: 1px solid var(--layout-border-color);
+    }
+    &-bottom {
+        border-bottom: 1px solid var(--layout-border-color);
+    }
+    &-left {
+        border-left: 1px solid var(--layout-border-color);
+    }
+    &-right {
+        border-right: 1px solid var(--layout-border-color);
+    }
+}
+
+// Utilities for common `display` values
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .d#{$infix}-none         { display: none !important; }
+    .d#{$infix}-inline       { display: inline !important; }
+    .d#{$infix}-inline-block { display: inline-block !important; }
+    .d#{$infix}-block        { display: block !important; }
+    .d#{$infix}-table        { display: table !important; }
+    .d#{$infix}-table-row    { display: table-row !important; }
+    .d#{$infix}-table-cell   { display: table-cell !important; }
+    .d#{$infix}-flex         { display: flex !important; }
+    .d#{$infix}-inline-flex  { display: inline-flex !important; }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+
+        .#{$abbrev}#{$infix}-#{$size} {
+            #{$prop}: $length !important;
+        }
+
+        .#{$abbrev}t#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+            #{$prop}-top: $length !important;
+        }
+        .#{$abbrev}r#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-right: $length !important;
+        }
+        .#{$abbrev}b#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+            #{$prop}-bottom: $length !important;
+        }
+        .#{$abbrev}l#{$infix}-#{$size},
+        .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-left: $length !important;
+        }
+      }
+    }
+
+    // Margin auto
+    .m#{$infix}-auto { margin: auto !important; }
+    .mt#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-top: auto !important;
+    }
+    .mr#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-right: auto !important;
+    }
+    .mb#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-bottom: auto !important;
+    }
+    .ml#{$infix}-auto,
+    .mx#{$infix}-auto {
+      margin-left: auto !important;
+    }
+  }
+}
+
+.u-unwrap {
+    margin-left: -$g-sm;
+    margin-right: -$g-sm;
+}
+
+.u-unwrap-top {
+    margin-top: -$g-sm;
+}
+
+.u-unwrap-bottom {
+    margin-bottom: -$g-sm;
+}
+
+.u-unwrap-all {
+    margin: -$g-sm;
+}
+
+.u-pointer {
+    cursor: pointer !important;
+}
+
+.u-line-through {
+    text-decoration: line-through;
+}
+
+.u-page {
+    max-width: 1000px;
+    margin-bottom: $o-lg;
+}
+
+.u-sticky {
+    position: sticky;
+    top: $g-sm;
+}
+
+.u-break-word {
+    word-break: break-word !important;
+
+    > * {
+        word-break: break-word !important;
+    }
+}
+
+.u-opacity {
+    @each $name, $value in (10: .1, 20: .2, 30: .3, 40: .4, 50: .5, 60: .6, 70: .7, 80: .8, 90: .9) {
+        &-#{$name} {
+            opacity: $value;
+        }
+    }
+}
+
+.u-position {
+    @each $value in (relative, static, absolute, fixed, sticky) {
+        &-#{$value} {
+            position: $value;
+        }
+    }
+}
+
+.u-transition {
+    transition: $transition;
+}
+
+.u-btn-edit {
+    padding: $--button-mini-padding-vertical;
+}
+
+.text-muted {
+    color: var(--color-gray-6);
+}
+
+.u-full {
+    min-height: calc(100vh - 114px);
+}
+
+@include media-breakpoint-up(sm) {
+
+    .u-full {
+        min-height: calc(100vh - 73px);
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+
+    .u-full {
+        min-height: 0;
+    }
+
+}

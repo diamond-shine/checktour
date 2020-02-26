@@ -1,0 +1,281 @@
+/* Shame
+/* ---------------------------------------------------------- */
+/* TODO: Kill with fire */
+
+.t-yellow {
+    .idl-nav {
+        // border-color: #ecc05f;
+        border-color: #fdd367;
+        // background-color: #fdd367;
+        background-color: #fde098 !important;
+
+        .idl-nav-menu-details-user {
+            color: #817242;
+        }
+
+        .idl-nav-list-h {
+            color: #817242;
+        }
+
+        .idl-nav-list .active {
+            background-color: #fff;
+            color: #333;
+            i {
+                color: #83847F;
+            }
+        }
+
+        .idl-nav-list a:not(.active):hover {
+            background-color: #f3e3b9;
+        }
+
+        .idl-input,
+        .idl-select,
+        select {
+            border-color: #fdd367;
+        }
+
+        .idl-nav-footer {
+            border-color: #fdd367;
+            background-color: $lightergrey;
+            margin-right: -1px;
+            border-right: 1px solid $grey;
+        }
+    }
+
+    .idl-input, .idl-select, select {
+        border-color: #f1deb8;
+    }
+
+    .view-header {
+        background-color: #fff8e7;
+        border-color: #f1deb8;
+    }
+
+    .idl-tabs a {
+        border-color: #f1deb8;
+        &:hover {
+            border-color: #f1deb8;
+            background-color: #fbf0d5;
+        }
+    }
+    .idl-tabs li.active a {
+        border-color: #f1deb8;
+        background-color: #fbf0d5;
+    }
+
+    .btn:not(.btn-red):not(.btn-blue):not(.btn-green):not(.btn-orange):not(.btn-disabled):not(.btn-translate):not(.delete-button):not(.delete-button) {
+        border-color: #f1deb8;
+    }
+
+    .btn.btn-translate {
+        background-color: #4376E9;
+        border-color: #196CA3;
+        color: #fff;
+    }
+
+    .btn-translate {
+        background-color: #4376E9;
+        border-color: #196CA3;
+    }
+
+    .gutter {
+        background-color: #f1deb8;
+    }
+    .idl-tags,
+    .ql-snow.ql-toolbar,
+    .entry-aside-toolbar .idl-subtabs {
+        border-color: #f1deb8;
+        background-color: #fff8e7;
+    }
+    .el-tag--info {
+        border-color: #f1deb8;
+        background-color: #fff8e7;
+    }
+    .idl-tags .el-input__inner {
+        border-color: #f1deb8;
+    }
+    .el-upload-dragger {
+        border-color: #f1deb8;
+    }
+    .ql-snow.ql-container {
+        border-color: #f1deb8 !important;
+    }
+    .entry-aside-toolbar {
+        border-color: #f1deb8;
+    }
+    .entry-aside-blocks .idl-input {
+        border-color: $grey;
+    }
+    .text-muted {
+        color: #846e41;
+    }
+    .entry-aside-blocks .text-muted {
+        color: $midgrey;
+    }
+
+    .list-item {
+        border-color: #f1deb8;
+    }
+    a.list-item:last-of-type:hover {
+        box-shadow: inset 0 -1px 0 #f1deb8;
+    }
+    .pagination>li>a, .pagination>li>span {
+        border-color: #f1deb8;
+    }
+    .third-list {
+        border-color: #f1deb8;
+    }
+    .settings-menu-container {
+        border-color: #f1deb8;
+    }
+
+}
+
+.t-blue {
+    .idl-nav {
+        border-color: #196CA3;
+        background-color: #1D7BBB !important;
+
+        .idl-nav-menu i {
+            color: #fff;
+        }
+
+        .idl-nav-menu-details-blog,
+        .idl-nav-menu-details-user {
+            color: #ffffff;
+        }
+
+        .idl-nav-list-h {
+            color: #ffffff;
+        }
+
+        .idl-nav-list .active {
+            background-color: #61A6CB;
+            color: #fff;
+            i {
+                color: #C0DBEA;
+            }
+        }
+
+        .idl-nav-list a {
+            color: #e0ebf3;
+        }
+
+        .idl-nav-list i {
+            color: #a1cae4;
+        }
+
+        .idl-nav-list a:not(.active):hover {
+            color: #fff;
+            background-color: #196CA3;
+            i {
+                color: #a1cae4;
+            }
+        }
+
+        .idl-nav-sublist-toggle {
+            color: #e0ebf3;
+        }
+
+        .idl-input,
+        .idl-select,
+        select {
+            border-color: #196CA3;
+        }
+
+        .idl-nav-footer {
+            border-color: #196CA3;
+            background-color: $lightergrey;
+            margin-right: -1px;
+            border-right: 1px solid $grey;
+        }
+    }
+
+    .view-header {
+        background-color: #E3EBFC;
+        border-color: #bacef7;
+    }
+
+    .idl-tabs a {
+        border-color: #bacef7;
+        &:hover {
+            border-color: #bacef7;
+            background-color: #d3e0fb;
+        }
+    }
+    .idl-tabs li.active a {
+        border-color: #bacef7;
+        background-color: #d3e0fb;
+    }
+
+    .btn:not(.btn-red):not(.btn-blue):not(.btn-green):not(.btn-orange):not(.btn-disabled):not(.btn-translate):not(.delete-button) {
+        border-color: #bacef7;
+    }
+
+    .btn.btn-translate {
+        color: #333;
+        border-color: #fdd367;
+        background-color: #fde098;
+    }
+
+    .idl-input, .idl-select, select {
+        border-color: #bacef7;
+    }
+
+    .gutter {
+        background-color: #bacef7;
+    }
+    .idl-tags,
+    .ql-snow.ql-toolbar,
+    .entry-aside-toolbar .idl-subtabs {
+        border-color: #bacef7;
+        background-color: #E3EBFC;
+    }
+    .el-tag--info {
+        border-color: #bacef7;
+        background-color: #d3e0fb;
+    }
+    .idl-tags .el-input__inner {
+        border-color: #bacef7;
+    }
+    .el-upload-dragger {
+        border-color: #bacef7;
+    }
+    .ql-snow.ql-container {
+        border-color: #bacef7 !important;
+    }
+    .entry-aside-toolbar {
+        border-color: #bacef7;
+    }
+    .entry-aside-blocks .idl-input {
+        border-color: $grey;
+    }
+    .text-muted {
+        color: #566ea0;
+    }
+    .entry-aside-blocks .text-muted {
+        color: $midgrey;
+    }
+
+    .list-item {
+        border-color: #bacef7;
+    }
+    a.list-item:last-of-type:hover {
+        box-shadow: inset 0 -1px 0 #bacef7;
+    }
+    .pagination>li>a, .pagination>li>span {
+        border-color: #bacef7;
+    }
+    .third-list {
+        border-color: #bacef7;
+    }
+    .settings-menu-container {
+        border-color: #bacef7;
+    }
+
+}
+
+
+/* Animations
+/* ---------------------------------------------------------- */

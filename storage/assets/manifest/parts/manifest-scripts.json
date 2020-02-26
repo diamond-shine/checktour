@@ -1,0 +1,20 @@
+{
+  "js/app.js": "js/app.a5c6135df9.js",
+  "js/bookings.js": "js/bookings.fb276c2a0c.js",
+  "js/ckeditor.js": "js/ckeditor.3bc10bf49a.js",
+  "js/dashboard.js": "js/dashboard.926ec580cb.js",
+  "js/element-ui/index.js": "js/element-ui/index.3b7de0d629.js",
+  "js/errors.js": "js/errors.e95adc5869.js",
+  "js/excursions.js": "js/excursions.51797df138.js",
+  "js/lodash.js": "js/lodash.050c900c28.js",
+  "js/schedules.js": "js/schedules.ff2e9d83ba.js",
+  "js/settings.js": "js/settings.fcc8ee41ab.js",
+  "js/tickets.js": "js/tickets.70c8bdf015.js",
+  "js/tour-options.js": "js/tour-options.d5c522cfa6.js",
+  "js/tours.js": "js/tours.d68c90d583.js",
+  "js/user-roles.js": "js/user-roles.2a3c2d5798.js",
+  "js/users.js": "js/users.9ec2bdb874.js",
+  "js/vue-router.js": "js/vue-router.0b3cf5efca.js",
+  "js/vue.js": "js/vue.d5c38adb09.js",
+  "js/vuex.js": "js/vuex.20ffe0fd30.js"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "ideil/laravel-file-manager",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "~6.0",
+        "ideil/binary-to-text-php": "*",
+        "ideil/morph-and-belongs-to-one-relations": "~1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ideil\\LaravelFileManager\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ideil\\LaravelFileManager\\Providers\\LaravelFileManagerServiceProvider"
+            ],
+            "aliases": {
+                "FileManager": "Ideil\\LaravelFileManager\\Facades\\FileManager"
+            }
+        }
+    }
+}

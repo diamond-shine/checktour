@@ -1,0 +1,321 @@
+.t-light {
+    --color-white:                                     #{$white};
+    --color-gray-1:                                    #{$gray-100};
+    --color-gray-2:                                    #{$gray-200};
+    --color-gray-3:                                    #{$gray-300};
+    --color-gray-4:                                    #{$gray-400};
+    --color-gray-5:                                    #{$gray-500};
+    --color-gray-6:                                    #{$gray-600};
+    --color-gray-7:                                    #{$gray-700};
+    --color-gray-8:                                    #{$gray-800};
+    --color-gray-9:                                    #{$gray-900};
+    --color-black:                                     #{$black};
+
+    --color-blue:                                      #{$blue};
+    --color-indigo:                                    #{$indigo};
+    --color-purple:                                    #{$purple};
+    --color-pink:                                      #{$pink};
+    --color-red:                                       #{$red};
+    --color-orange:                                    #{$orange};
+    --color-yellow:                                    #{$yellow};
+    --color-green:                                     #{$green};
+    --color-teal:                                      #{$teal};
+    --color-cyan:                                      #{$cyan};
+
+    --color-primary:                                   #{$primary};
+    --color-secondary:                                 #{$secondary};
+    --color-success:                                   #{$success};
+    --color-info:                                      #{$info};
+    --color-warning:                                   #{$warning};
+    --color-danger:                                    #{$danger};
+    --color-light:                                     #{$light};
+    --color-gray:                                      #{$gray};
+    --color-dark:                                      #{$dark};
+
+    --layout-border-color:                             var(--color-gray-3);
+    --layout-shadow-color:                             var(--color-black);
+    --layout-shadow-opacity:                           .1;
+    --layout-bg:                                       var(--color-gray-1);
+    
+    --body-color:                                      var(--color-gray-9);
+    --body-bg:                                         var(--color-white);
+    
+    --nav-bg:                                          var(--color-gray-2);
+    --nav-border-color:                                var(--layout-border-color);
+    --nav-group-color:                                 var(--color-gray-6);
+    --nav-submenu-color:                               var(--color-gray);
+    --nav-submenu-hover-color:                         var(--body-color);
+    --nav-item-color:                                  var(--body-color);
+    --nav-item-active-bg:                              #cedff1;
+    --nav-item-hover-bg:                               #e1eaf5;
+    --nav-item-hover-color:                            var(--nav-item-color);
+    --nav-divider-color:                               var(--layout-border-color);
+    --nav-link-color:                                  var(--color-gray-6);
+    --nav-link-hover-color:                            var(--color-primary);
+
+    --sidebar-bg:                                      var(--body-bg);
+    --sidebar-border-color:                            var(--layout-border-color);
+    --sidebar-icon-color:                              var(--body-color);
+    --sidebar-icon-hover-color:                        var(--color-primary);
+
+    --breadcrumbs-color:                               var(--color-gray);
+    --breadcrumbs-hover-color:                         var(--color-primary);
+    --breadcrumbs-separator-color:                     var(--color-gray-4);
+
+    --list-item-hover-bg:                              var(--color-gray-1);
+    --list-item-active-bg:                             var(--color-primary);
+    --list-item-description:                           var(--color-gray);
+
+    --nav-list-border-color:                           var(--layout-border-color);
+    --nav-list-item-hover-bg:                          var(--nav-bg);
+
+    --empty-block-color:                               var(--color-gray-4);
+
+    --tree-item-hover-color:                           var(--nav-bg);
+    --tree-icon-color:                                 var(--color-gray-4);
+
+    --dialog-bg:                                       var(--color-white);
+    --dialog-box-shadow:                               0 0 0 5px #{rgba($black, .2)};
+
+    --tabs-border-color:                               var(--layout-border-color);
+
+    --media-item-hover-border-color:                   var(--color-gray-2);
+    --media-progress-bg:                               var(--color-gray-1);
+    --media-progress-value-wrap-bg:                    #{rgba($black, .05)};
+    --media-progress-value-bg:                         var(--color-primary);
+
+    --upload-border-color:                             var(--color-gray-2);
+    --upload-hover-bg:                                 var(--color-gray-1);
+    --upload-icon-color:                               var(--color-gray-4);
+
+    --aside-icon-svg-color:                            var(--color-gray-3);
+    --aside-icon-title-color:                          var(--color-gray-4);
+
+    --login-bg:                                        var(--color-gray-2);
+    --login-form-bg:                                   var(--color-white);
+    --login-box-shadow:                                0 5px 20px #{rgba($black, .15)};
+
+    --panel-bg:                                        var(--body-bg);
+    --panel-gradient:                                  #{rgba($white, 0)};
+
+    --input-border-color:                            #dcdfe6;
+    --input-bg:                                        var(--body-bg);
+    --input-icon-color:                                var(--color-gray-5);
+    --input-placeholder-color:                       #c0c4cc;
+    --input-hover-border-color:                      #c0c4cc;
+    --input-disabled-bg:                             #f5f7fa;
+    --input-disabled-border-color:                   #e4e7ed;
+    --input-disabled-color:                          #c0c4cc;
+    --input-disabled-placeholder-color:              #c0c4cc;
+    --input-autofill:                                #edf6ff;
+
+    --tooltip-bg:                                     var(--body-color);
+    --popover-bg:                                     var(--color-white);
+    --popover-border-color:                           var(--color-gray-4);
+
+    --dropdown-bg:                                    var(--color-white);
+    --dropdown-border-color:                          #e4e7ed;
+    --dropdown-item-hover-bg:                          var(--color-secondary);
+    --dropdown-item-hover-color:                       var(--body-color);
+
+    --select-border-color:                             var(--layout-border-color);
+    --select-item-hover-bg:                            var(--color-secondary);
+
+    --box-shadow-light:                                #{rgba($black, .1)};
+
+    --ps-color:                                        var(--color-gray-5);
+    --ps-bg:                                           var(--color-gray-3);
+
+    --group-append-bg:                                 #f5f7fa;
+    --group-append-color:                              var(--color-gray-5);
+    --group-append-disabled-color:                     var(--color-gray-4);
+
+    --steps-color:                                     var(--color-gray-5);
+
+    --table-expand-shadow:                             #{rgba($black, .04)};
+    --table-expand-hover-bg:                           var(--color-gray-2);
+    --table-bg:                                        var(--body-bg);
+    --table-striped-bg:                                #{rgba($gray-100, .5)};
+    --table-group-bg:                                  #{rgba($gray-100, .6)};
+
+    --tag-fill:                                        #{rgba($primary, .1)};
+    --tag-border:                                      #{rgba($primary, .2)};
+    --tag-info-fill:                                   #{rgba($info, .1)};
+    --tag-info-border:                                 #{rgba($info, .2)};
+    --tag-success-fill:                                #{rgba($success, .1)};
+    --tag-success-border:                              #{rgba($success, .2)};
+    --tag-warning-fill:                                #{rgba($warning, .1)};
+    --tag-warning-border:                              #{rgba($warning, .2)};
+    --tag-danger-fill:                                 #{rgba($danger, .1)};
+    --tag-danger-border:                               #{rgba($danger, .2)};
+
+    --date-picker-border-color:                        var(--color-gray-3);
+
+    --loading-mask-bg:                                 #{rgba($white, .9)};
+
+    --tel-bg:                                          var(--dropdown-bg);
+    --tel-border-color:                                var(--input-border-color);
+    --tel-preferred:                                   var(--input-border-color);
+    --tel-highlighted:                                 var(--color-gray-2);
+}
+
+.t-dark {
+    --color-white:                                     #000000;
+    --color-gray-1:                                    #1f1f1f;
+    --color-gray-2:                                    #3c3c3c;
+    --color-gray-3:                                    #404142;
+    --color-gray-4:                                    #5b5b5b;
+    --color-gray-5:                                    #666769;
+    --color-gray-6:                                    #8e8e8e;
+    --color-gray-7:                                    #a0a0a0;
+    --color-gray-8:                                    #c5c5c5;
+    --color-gray-9:                                    #e5e4e5;
+    --color-black:                                     #ffffff;
+
+    --color-blue:                                      #{$blue};
+    --color-indigo:                                    #{$indigo};
+    --color-purple:                                    #{$purple};
+    --color-pink:                                      #{$pink};
+    --color-red:                                       #{$red};
+    --color-orange:                                    #{$orange};
+    --color-yellow:                                    #{$yellow};
+    --color-green:                                     #{$green};
+    --color-teal:                                      #{$teal};
+    --color-cyan:                                      #{$cyan};
+
+    --color-primary:                                   #{$primary};
+    --color-secondary:                                 var(--color-gray-2);
+    --color-success:                                   #{$success};
+    --color-info:                                      #{$info};
+    --color-warning:                                   #{$warning};
+    --color-danger:                                    #{$danger};
+    --color-light:                                     var(--color-gray-3);
+    --color-gray:                                      var(--color-gray-6);
+    --color-dark:                                      var(--color-gray-8);
+    
+    --layout-border-color:                             var(--color-secondary);
+    --layout-shadow-color:                             var(--color-white);
+    --layout-shadow-opacity:                           .6;
+    --layout-bg:                                       var(--body-bg);
+
+    --body-color:                                      var(--color-gray-8);
+    --body-bg:                                         var(--color-gray-1);
+
+    --nav-bg:                                          var(--color-secondary);
+    --nav-border-color:                                var(--body-bg);
+    --nav-group-color:                                 var(--color-dark);
+    --nav-submenu-color:                               var(--color-gray-7);
+    --nav-submenu-hover-color:                         var(--color-gray-5);
+    --nav-item-color:                                  var(--color-gray-7);
+    --nav-item-active-bg:                              var(--body-bg);
+    --nav-item-hover-bg:                               #{rgba($black, .15)};
+    --nav-item-hover-color:                            var(--color-gray-7);
+    --nav-divider-color:                               var(--color-gray-4);
+    --nav-link-color:                                  var(--color-gray-7);
+    --nav-link-hover-color:                            var(--color-primary);
+
+    --sidebar-bg:                                      var(--body-bg);
+    --sidebar-border-color:                            var(--body-bg);
+    --sidebar-icon-color:                              var(--body-color);
+    --sidebar-icon-hover-color:                        var(--color-primary);
+
+    --breadcrumbs-color:                               var(--color-gray);
+    --breadcrumbs-hover-color:                         var(--color-primary);
+    --breadcrumbs-separator-color:                     var(--color-gray);
+
+    --list-item-hover-bg:                              var(--nav-bg);
+    --list-item-active-bg:                             var(--color-primary);
+    --list-item-description:                           var(--color-gray);
+
+    --nav-list-border-color:                           var(--layout-border-color);
+    --nav-list-item-hover-bg:                          var(--layout-border-color);
+
+    --empty-block-color:                               var(--body-color);
+
+    --tree-item-hover-color:                           var(--nav-bg);
+    --tree-icon-color:                                 var(--body-color);
+
+    --dialog-bg:                                       var(--body-bg);
+    --dialog-box-shadow:                               0 0 0 5px var(--layout-border-color);
+
+    --tabs-border-color:                               var(--layout-border-color);
+
+    --media-item-hover-border-color:                   var(--color-light);
+    --media-progress-bg:                               var(--color-gray-4);
+    --media-progress-value-wrap-bg:                    #{rgba($black, .15)};
+    --media-progress-value-bg:                         var(--color-primary);
+
+    --upload-border-color:                             var(--color-light);
+    --upload-hover-bg:                                 var(--color-light);
+    --upload-icon-color:                               var(--body-color);
+
+    --aside-icon-svg-color:                            var(--color-gray-3);
+    --aside-icon-title-color:                          var(--color-gray-4);
+
+    --login-bg:                                        var(--body-bg);
+    --login-form-bg:                                   var(--nav-bg);
+    --login-box-shadow:                                0 5px 20px var(--color-white);
+
+    --panel-bg:                                        #292929;
+    --panel-gradient:                                  #{rgba(#292929, 0)};
+
+    --input-border-color:                              #{rgba($white, .06)};
+    --input-bg:                                        #{rgba($white, .03)};
+    --input-icon-color:                                var(--body-color);
+    --input-placeholder-color:                         var(--color-gray-5);
+    --input-hover-border-color:                        #{rgba($white, .1)};
+    --input-disabled-bg:                               #{rgba($white, .07)};
+    --input-disabled-border-color:                     #{rgba($white, .1)};
+    --input-disabled-color:                            var(--color-gray-5);
+    --input-disabled-placeholder-color:                var(--color-gray-5);
+    --input-autofill:                                #4c5a69;
+
+    --tooltip-bg:                                      var(--nav-bg);
+    --popover-bg:                                      var(--nav-bg);
+    --popover-border-color:                            var(--body-bg);
+
+    --dropdown-bg:                                     var(--nav-bg);
+    --dropdown-border-color:                           var(--body-bg);
+    --dropdown-item-hover-bg:                          #{rgba($black, .15)};
+    --dropdown-item-hover-color:                       var(--body-color);
+
+    --select-border-color:                             var(--body-bg);
+    --select-item-hover-bg:                            var(--color-secondary);
+
+    --box-shadow-light:                                #{rgba($black, .5)};
+
+    --ps-color:                                        var(--color-gray-6);
+    --ps-bg:                                           var(--color-gray-4);
+
+    --group-append-bg:                                 var(--input-border-color);
+    --group-append-color:                              var(--body-color);
+    --group-append-disabled-color:                     var(--color-gray-4);
+
+    --steps-color:                                     var(--color-gray-4);
+
+    --table-expand-shadow:                             #{rgba($black, .15)};
+    --table-expand-hover-bg:                           var(--color-gray-3);
+    --table-bg:                                        var(--body-bg);
+    --table-striped-bg:                                #{rgba(#3c3c3c, .5)};
+    --table-group-bg:                                  #{rgba(#3c3c3c, .6)};
+
+    --tag-fill:                                        #{rgba($primary, .1)};
+    --tag-border:                                      #{rgba($primary, .2)};
+    --tag-info-fill:                                   #{rgba($info, .15)};
+    --tag-info-border:                                 #{rgba($info, .25)};
+    --tag-success-fill:                                #{rgba($success, .1)};
+    --tag-success-border:                              #{rgba($success, .2)};
+    --tag-warning-fill:                                #{rgba($warning, .1)};
+    --tag-warning-border:                              #{rgba($warning, .2)};
+    --tag-danger-fill:                                 #{rgba($danger, .1)};
+    --tag-danger-border:                               #{rgba($danger, .2)};
+
+    --date-picker-border-color:                        var(--color-gray-4);
+
+    --loading-mask-bg:                                 #{rgba(#1f1f1f, .9)};
+
+    --tel-bg:                                          var(--dropdown-bg);
+    --tel-border-color:                                var(--input-border-color);
+    --tel-preferred:                                   var(--input-border-color);
+    --tel-highlighted:                                 var(--dropdown-item-hover-bg);
+}

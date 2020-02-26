@@ -1,0 +1,21 @@
+{
+    "name": "ideil/image-miner",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "o.guz",
+            "email": "o.guz@ideil.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "intervention/image": "^2.2",
+        "ideil/binary-to-text-php": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ideil\\ImageMiner\\": "src/"
+        }
+    }
+}

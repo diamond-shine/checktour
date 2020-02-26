@@ -1,0 +1,55 @@
+.c-fullpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--login-bg);
+
+    &__inner {
+        max-width: 100%;
+        padding: $g-sm;
+    }
+}
+
+.c-login {
+    max-width: 100%;
+    width: 400px;
+    margin-bottom: 100px;
+
+    &__heading {
+        text-align: center;
+        margin-bottom: $g;
+    }
+
+    &__main {
+        padding: $g;
+        background-color: var(--login-form-bg);
+        border-radius: $border-radius;
+        box-shadow: var(--login-box-shadow);
+
+        .el-button {
+            margin-top: $g-sm;
+            width: 100%;
+        }
+    }
+
+    &__footer {
+        padding: $o-sm $g-sm;
+        margin-top: $g;
+        background-color: var(--login-form-bg);
+        border-radius: $border-radius;
+        font-size: $font-size-sm;
+        text-align: center;
+        box-shadow: var(--login-box-shadow);
+
+        a {
+            color: var(--color-gray-5);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--color-primary);
+                text-decoration: underline;
+            }
+        }
+    }
+}

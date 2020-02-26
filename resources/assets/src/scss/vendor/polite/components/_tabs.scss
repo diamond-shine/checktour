@@ -1,0 +1,103 @@
+.idl-tabs {
+    width: 100%;
+    margin: 0 0 20px 0;
+
+    a {
+        display: inline-block;
+        padding: 4px 14px;
+        border-radius: $border-radius;
+        border: 1px dotted $grey;
+        &:hover {
+            background-color: $lightergrey;
+            border-color: $lightergrey;
+        }
+    }
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+        color: $darkgrey !important;
+    }
+    & > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    li {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        &:last-child {
+            margin-right: 0;
+        }
+        &.active {
+            a {
+                background-color: $lightergrey;
+                border: 1px solid $grey;
+                cursor: default;
+            }
+        }
+    }
+    &.idl-tabs-sm {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0;
+        padding-top: 2px;
+    }
+}
+
+.idl-subtabs {
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 4px 0;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    background-color: $lightergrey;
+
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+        display: inline-block;
+        padding: 2px 4px;
+        text-decoration: none !important;
+        color: $midgrey !important;
+    }
+    & > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    li {
+        display: inline-block;
+        margin: 0 4px 0 0;
+        &:hover {
+            a,
+            a:hover,
+            a:active,
+            a:visited {
+                color: $darkgrey !important;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        &.active {
+            a,
+            a:hover,
+            a:active,
+            a:visited {
+                color: $darkgrey !important;
+            }
+        }
+    }
+}

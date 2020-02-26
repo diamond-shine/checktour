@@ -1,0 +1,208 @@
+@keyframes keyframes1 {
+    0% {
+        transform: rotate(-1deg);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(1.5deg);
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes keyframes2 {
+    0% {
+        transform: rotate(1deg);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(-1.5deg);
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes keyframes3 {
+    0% {
+        transform: rotate(0.5deg);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(2deg);
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes keyframes4 {
+    0% {
+        transform: rotate(-0.5deg);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: rotate(1deg);
+        animation-timing-function: ease-out;
+    }
+}
+
+.media-grid {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: space-between;
+  margin: 0 0 20px;
+  padding: 10px;
+
+  .settings-menu & {
+    padding: 0;
+    margin: -10px -10px 10px;
+  }
+}
+
+.media-grid-cell {
+  width: 25%;
+
+  .settings-menu & {
+    width: 25%;
+
+    &:nth-child(2n) {
+      animation-name: keyframes1;
+      animation-iteration-count: infinite;
+      transform-origin: 50% 10%;
+      animation-duration: 0.4s;
+    }
+
+    &:nth-child(2n-1) {
+      animation-name: keyframes2;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transform-origin: 30% 5%;
+      animation-delay: 0.2s;
+      animation-duration: 0.3s;
+    }
+
+    &:nth-child(5n-2) {
+      animation-name: keyframes3;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transform-origin: 20% 25%;
+      animation-delay: 0.1s;
+      animation-duration: 0.3s;
+    }
+    &:nth-child(5n) {
+      animation-name: keyframes4;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transform-origin: 10% 50%;
+      animation-delay: 0.2s;
+      animation-duration: 0.3s;
+    }
+  }
+
+}
+
+@media (max-width: 991px) {
+  .media-grid-cell {
+    width: 50%;
+  }
+}
+
+.media-card {
+  position: relative;
+  display: block;
+  margin: 10px;
+  border: 2px solid $lightgrey;
+  background-color: $lightgrey;
+  border-radius: $border-radius + 1px;
+
+  &.active,
+  &.selected {
+    border-width: 5px;
+
+    .media-card-check {
+      top: 2px;
+      right: -3px;
+    }
+  }
+
+  &.active {
+    border-color: $blue;
+    background-color: $blue;
+    border-radius: $border-radius + 3px;
+  }
+
+  &.selected {
+    border-color: $green;
+    background-color: $green;
+    border-radius: $border-radius + 3px;
+  }
+
+  .settings-menu & {
+    border: 0;
+    border-radius: $border-radius;
+  }
+
+}
+
+.media-card-content {
+  position: relative;
+  display: block;
+  padding-top: 100%;
+}
+
+.media-card-image {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius;
+
+  .settings-menu & {
+    border-radius: $border-radius;
+  }
+}
+
+.media-card-check {
+  position: absolute;
+  display: block;
+  top: 5px;
+  right: 0px;
+}
+
+.media-card-badge {
+  position: absolute;
+  display: block;
+  top: -7px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  background-color: $red;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fullscreen-media-modal {
+  display: flex;
+  height: 100%;
+  max-width: 1000px;
+  flex-direction: column;
+
+  .modal-content {
+    height: 100%;
+  }
+
+  .modal-body {
+    margin: -48px -18px -55px;
+    padding: 48px 0 55px;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .view-container {
+    border-top: 1px solid $lightgrey;
+    border-bottom: 1px solid $lightgrey;
+    height: 100%;
+  }
+}

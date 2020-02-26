@@ -1,0 +1,708 @@
+/* Editor /polite/editor/
+/* ---------------------------------------------------------- */
+
+/* Title
+/* ---------------------------------------------------------- */
+
+.idl-editor-title {
+    flex-grow: 1;
+
+    input {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: $darkgrey;
+        letter-spacing: -1px;
+        font-size: 2.6rem;
+        font-weight: bold;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .idl-tabs {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0;
+
+        ul {
+            overflow: initial;
+            padding-left: 2px;
+        }
+    }
+}
+
+.editor-options .dropdown-menu {
+    top: 35px;
+    right: 0;
+    left: auto;
+}
+
+/* Container & Headers
+/* ---------------------------------------------------------- */
+
+.view-editor {
+    display: flex;
+}
+
+.editor {
+
+    .entry-preview {
+        border-left: $grey 1px solid;
+    }
+
+    .entry-markdown, .entry-preview,
+    .entry-main, .entry-aside {
+        position: relative; /*TODO: Remove*/
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    /* Content areas at the top, and fill available space */
+    .entry-markdown-content, .entry-preview-content,
+    .entry-main-content, .entry-aside-content {
+        order: 1;
+        flex-grow: 1;
+    }
+
+    /* Headers at the bottom, and fixed height */
+    .floatingheader {
+        order: 2;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        height: 40px;
+        border-top: $grey 1px solid;
+        color: $midgrey;
+        font-size: 1.2rem;
+        line-height: 1em;
+
+        a {
+            padding: 5px 15px;
+            color: $midgrey;
+
+            &.active {
+                font-weight: bold;
+            }
+
+            &:first-of-type {
+                padding-left: 0;
+            }
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+
+        span a:not(:first-of-type) {
+            border-left: 1px solid $grey;
+        }
+
+        .mobile-tabs {
+            display: none;
+        }
+    }
+}
+
+/* Switch to 1 col editor on small screens */
+@media (max-width: 1000px) {
+
+    .editor {
+
+        .entry-markdown, .entry-preview,
+        .entry-main, .entry-aside {
+            width: 100%;
+            border-left: 0;
+
+            &:not(.active) {
+                visibility: hidden;
+                position: absolute;
+                z-index: -1;
+                height: 100%;
+            }
+        }
+
+        /* We can't use display:none here as we want to keep widths/heights
+         * so that scrolling is kept in sync */
+        .floatingheader {
+
+            .mobile-tabs {
+                display: inline;
+            }
+
+            .desktop-tabs {
+                display: none;
+            }
+        }
+    }
+
+}
+
+
+/* Editor (Left pane)
+/* ---------------------------------------------------------- */
+
+.editor {
+
+    .entry-markdown-content,
+    .entry-main-content {
+        position: relative;
+        flex-grow: 1;
+    }
+
+    .entry-main-content {
+    }
+
+    .markdown-editor {
+        /* Legacy absolute positioning */
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 21px 20px 36px;
+        max-width: 100%;
+        height: 100%;
+        border: 0;
+        color: lighten($darkgrey, 10%);
+        font-family: $font-family-mono;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        resize: none;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+
+    .editor .markdown-editor {
+        padding: 15px;
+    }
+
+}
+
+/* FFF: Fucking Firefox Fixes
+/* ---------------------------------------------------------- */
+
+@-moz-document url-prefix() {
+    .editor .markdown-editor {
+        top: 40px;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: calc(100% - 40px);
+    }
+}
+
+/* Preview (Right pane)
+/* ---------------------------------------------------------- */
+
+.editor .entry-preview-content,
+.editor .entry-aside,
+.editor .entry-main {
+    flex-grow: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 19px 20px 37px;
+    word-break: break-word;
+    hyphens: auto;
+    cursor: default;
+}
+.editor .entry-aside,
+.editor .entry-main {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > *:first-child {
+        padding-top: 18px;
+    }
+}
+
+/* The styles for the actual content inside the preview */
+.entry-preview-content,
+.content-preview-content,
+.entry-main-content {
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 200;
+
+    * {
+        user-select: text;
+    }
+
+    a {
+        color: $blue;
+        text-decoration: underline;
+
+        &.image-edit {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    sup a {
+        text-decoration: none;
+    }
+
+    .btn {
+        text-decoration: none;
+    }
+
+    .img-placeholder {
+        position: relative;
+        height: 100px;
+        border: 5px dashed $grey;
+
+        span {
+            position: absolute;
+            top: 50%;
+            display: block;
+            margin-top: -15px;
+            width: 100%;
+            height: 30px;
+            text-align: center;
+        }
+    }
+
+    img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.entry-aside-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+/* Placeholder objects for <script> & <iframe> */
+.js-embed-placeholder,
+.iframe-embed-placeholder {
+    padding: 100px 20px;
+    border: 0;
+    background: #f9f9f9;
+    text-align: center;
+    font-family: $font-family;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Tags input CSS (TODO: needs some revision)
+/* ------------------------------------------------------ */
+.tags-input-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        flex: 1 0 auto;
+    }
+}
+
+.label-tag {
+    margin-right: 0.3em;
+    padding: 0.2em 0.6em 0.3em;
+    background-color: $darkgrey;
+    border-radius: 0.25em;
+    color: $lightgrey;
+    text-align: center;
+    font-weight: 300;
+
+    &.highlight {
+        background: $midgrey;
+        color: #fff;
+    }
+}
+
+.tag-input {
+    margin-top: 5px;
+    border: 0;
+    font-weight: 300;
+    cursor: default;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.publish-bar-actions {
+    flex: 1 0 auto;
+    align-self: auto;
+    display: flex;
+    text-align: right;
+}
+
+.post-settings {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    color: $midgrey;
+    top: 2px;
+    transition: all 0.15s ease-out 0s;
+
+    &:hover, &.active {
+        color: $darkgrey;
+    }
+
+    i {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.post-settings-menu .dropdown-menu {
+    top: auto;
+    right: 100%;
+    bottom: 100%;
+    left: auto;
+}
+
+.post-view-link {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    font-size: 1.3rem;
+
+    i {
+        display: inline;
+        font-size: 10px;
+    }
+}
+
+/* Post settings meta
+/* ---------------------------------------------------------- */
+
+/* Google Imitation */
+.seo-preview {
+    font-family: Arial, sans-serif;
+}
+
+.seo-preview-title {
+    color: #1e0fbe;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-size: 1.8rem;
+    line-height: 2.16rem;
+    -webkit-text-overflow: ellipsis;
+}
+
+.seo-preview-link {
+    margin: 1px 0 2px;
+    color: #006621;
+    word-wrap: break-word;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+}
+
+.seo-preview-description {
+    color: #545454;
+    word-wrap: break-word;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+/* Open Graph preview
+/* ---------------------------------------------------------- */
+
+.og-preview {
+  border: 1px solid;
+  border-color: #e9ebee #e9ebee #d1d1d1;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+}
+
+.og-preview-image {
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, .098) rgba(0, 0, 0, .149) rgba(0, 0, 0, .231);
+  margin: -1px -1px 0 -1px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    line-height: 0;
+  }
+}
+
+.og-preview-text {
+  padding: 4px 6px;
+}
+
+.og-preview-title {
+  font-family: Georgia, serif;
+  letter-spacing: normal;
+  margin-bottom: 2px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  overflow: hidden;
+  max-height: 80px;
+  word-wrap: break-word;
+}
+
+.og-preview-description {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  max-height: 65px;
+  overflow: hidden;
+  color: #4b4f56;
+}
+
+.og-preview-link {
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 4px;
+  font-size: 9px;
+  line-height: 9px;
+  color: #90949c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Markdown Help Icon + Modal
+/* ---------------------------------------------------------- */
+
+.markdown-help-icon {
+    font-size: 16px;
+}
+
+.markdown-help-icon:hover,
+.markdown-help-label:hover {
+    cursor: help;
+}
+
+.modal-markdown-help-table {
+    margin: 0 0 20px;
+    width: 100%;
+
+    td, th {
+        padding: 8px 0;
+    }
+
+    th {
+        text-align: left;
+    }
+}
+
+/* Aside toolbar
+/* ---------------------------------------------------------- */
+.entry-aside-toolbar {
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    background-color: #fff;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 8px 0;
+    position: sticky;
+    top: -1px;
+    z-index: 50;
+
+    .idl-tabs {
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+
+        > ul {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        a {
+            color: $darkgrey;
+            text-decoration: none;
+        }
+    }
+    .idl-subtabs {
+        border-top: 1px solid $grey;
+        margin-top: 8px;
+        margin-bottom: -8px;
+
+        > ul {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+button + .flag-switch-container {
+    margin-left: 50px;
+}
+
+.editor-main-image {
+    .smiles {
+        font-size: 24px;
+        margin-top: 14px;
+    }
+}
+
+.editor-main-image-upload {
+    .el-upload {
+        display: block;
+    }
+    .el-upload-dragger {
+        width: 100%;
+        height: 80px;
+    }
+    .icon-upload {
+        margin-top: 14px;
+        + p {
+            margin: 0;
+        }
+    }
+}
+
+.editor-main-image-uploading {
+    .el-upload {
+        display: block;
+    }
+    .el-upload-dragger {
+        width: 100%;
+        height: 80px;
+    }
+    .dot-flashing {
+        display: block;
+        margin: 24px auto 8px;
+        + p {
+            margin: 0;
+        }
+    }
+}
+
+.editor-main-image-uploaded {
+    display: flex;
+    .el-upload {
+        display: block;
+    }
+    > div:first-child {
+        width: 40%;
+    }
+    .el-upload-dragger {
+        flex-grow: 0;
+        width: 100%;
+        height: 160px;
+        background-image: linear-gradient(45deg, $lightgrey 25%, transparent 25%), linear-gradient(-45deg, $lightgrey 25%, transparent 25%), linear-gradient(45deg, transparent 75%, $lightgrey 75%), linear-gradient(-45deg, transparent 75%, $lightgrey 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    .image-in-container {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .editor-main-image-controls {
+        flex-grow: 1;
+        margin-left: 10px;
+
+        .idl-tags {
+            margin-bottom: 10px;
+        }
+    }
+    textarea {
+        resize: none;
+        min-height: 7.3rem;
+        height: 7.3rem;
+        margin-bottom: 10px;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        color: $midgrey;
+    }
+}
+
+.editor-main-image-error {
+    .el-upload {
+        display: block;
+    }
+    .el-upload-dragger {
+        width: 100%;
+        height: 80px;
+    }
+    p {
+        color: $red;
+    }
+}
+
+.editor-status {
+    position: relative;
+    padding-left: 14px;
+    margin-right: 10px;
+    small {
+        display: block;
+        font-size: 11px;
+        line-height: 14px;
+    }
+    b {
+        display: block;
+        text-transform: uppercase;
+        font-size: 11px;
+        line-height: 14px;
+        letter-spacing: 0.5px;
+    }
+    &.editor-published,
+    &.editor-deleted,
+    &.editor-draft {
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -3px;
+        }
+    }
+}
+
+.editor-published {
+    &::before {
+        content: "";
+        border-radius: 50%;
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-right: 4px;
+        background-color: $green;
+        border: 1px solid darken($green, 10%);
+    }
+}
+.editor-deleted {
+    &::before {
+        content: "";
+        border-radius: 50%;
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-right: 4px;
+        background-color: $red;
+        border: 1px solid darken($red, 10%);
+    }
+}
+.editor-draft {
+    &::before {
+        content: "";
+        border-radius: 50%;
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-right: 4px;
+        background-color: $grey;
+        border: 1px solid darken($grey, 10%);
+    }
+}

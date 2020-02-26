@@ -1,0 +1,32 @@
+/* <div class="selector">
+  <ul class="selector-list">
+    <li class="selector-item"><span>Все пользователи</span></li>
+    <li class="selector-item"><a href="#">Активные</a></li>
+    <li class="selector-item"><a href="#">Заблокированные</a></li>
+  </ul>
+</div> */
+
+.selector {
+}
+
+.selector-list {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  line-height: 20px;
+  vertical-align: middle;
+
+  + .selector-list {
+    margin-left: 10px;
+  }
+}
+
+.selector-item {
+  display: inline-block;
+  margin: 0 10px 0 0;
+
+  a {
+    text-decoration: underline;
+  }
+}

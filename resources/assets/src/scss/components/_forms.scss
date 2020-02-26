@@ -1,0 +1,36 @@
+// .c-form-group-caption {
+//     border-bottom: 2px solid #606266;
+//     margin-bottom: 30px;
+//     padding-bottom: 5px;
+//     font-size: 22px;
+//     color: #606266;
+// }
+
+.c-form-preview {
+    margin-bottom: $g-sm;
+
+    &__label {
+        display: block;
+        margin-bottom: 3px;
+        color: var(--color-gray);
+        font-size: $font-size-xs;
+    }
+
+    &__value {
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+            text-decoration: none;
+        }
+    }
+}
+
+.c-slugify--lock {
+    &.is-disabled {
+        .el-input__icon {
+            cursor: default;
+            color: var(--color-gray);
+        }
+    }
+}

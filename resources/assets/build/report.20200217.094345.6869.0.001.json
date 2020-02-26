@@ -1,0 +1,638 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200217.094345.6869.0.001.json",
+    "dumpEventTime": "2020-02-17T09:43:45Z",
+    "dumpEventTimeStamp": "1581925425516",
+    "processId": 6869,
+    "cwd": "/home/oleksandr/projects/php72/TC/resources/assets/build",
+    "commandLine": [
+      "/home/oleksandr/.nvm/versions/node/v12.13.0/bin/node",
+      "/home/oleksandr/projects/php72/TC/resources/assets/node_modules/.bin/gulp",
+      "-f",
+      "./build/gulpfile.js",
+      "watch"
+    ],
+    "nodejsVersion": "v12.13.0",
+    "glibcVersionRuntime": "2.29",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "12.13.0",
+      "v8": "7.7.299.13-node.12",
+      "uv": "1.32.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.13.0/node-v12.13.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "4.19.45-1-MANJARO",
+    "osVersion": "#1 SMP PREEMPT Wed May 22 17:16:41 UTC 2019",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Pentium(R) CPU G3220 @ 3.00GHz",
+        "speed": 2993,
+        "user": 5075500,
+        "nice": 1629100,
+        "sys": 1130100,
+        "idle": 23659300,
+        "irq": 115900
+      },
+      {
+        "model": "Intel(R) Pentium(R) CPU G3220 @ 3.00GHz",
+        "speed": 2993,
+        "user": 5397000,
+        "nice": 2283900,
+        "sys": 1112700,
+        "idle": 22569300,
+        "irq": 125600
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "wlp0s20u2",
+        "internal": false,
+        "mac": "84:16:f9:0b:40:ca",
+        "address": "10.30.30.87",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "br-c5c29682940f",
+        "internal": false,
+        "mac": "02:23:de:52:95:28",
+        "address": "172.18.0.1",
+        "netmask": "255.255.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "br-761d2e4c671f",
+        "internal": false,
+        "mac": "86:a3:f1:6e:05:a1",
+        "address": "172.19.0.1",
+        "netmask": "255.255.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "wlp0s20u2",
+        "internal": false,
+        "mac": "84:16:f9:0b:40:ca",
+        "address": "fe80::104c:12d1:66d8:9972",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 3
+      },
+      {
+        "name": "br-c5c29682940f",
+        "internal": false,
+        "mac": "02:23:de:52:95:28",
+        "address": "fe80::23:deff:fe52:9528",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 5
+      },
+      {
+        "name": "br-761d2e4c671f",
+        "internal": false,
+        "mac": "86:a3:f1:6e:05:a1",
+        "address": "fe80::84a3:f1ff:fe6e:5a1",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 6
+      },
+      {
+        "name": "veth25504fb",
+        "internal": false,
+        "mac": "0a:34:cf:41:82:0a",
+        "address": "fe80::834:cfff:fe41:820a",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 9
+      },
+      {
+        "name": "vethd078a99",
+        "internal": false,
+        "mac": "ca:9a:2d:6f:96:e4",
+        "address": "fe80::c89a:2dff:fe6f:96e4",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 11
+      },
+      {
+        "name": "vethcc0eecb",
+        "internal": false,
+        "mac": "8a:9a:25:9a:57:96",
+        "address": "fe80::889a:25ff:fe9a:5796",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 13
+      },
+      {
+        "name": "vethf39be93",
+        "internal": false,
+        "mac": "02:6b:10:ff:67:86",
+        "address": "fe80::6b:10ff:feff:6786",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 15
+      },
+      {
+        "name": "vethd13bef9",
+        "internal": false,
+        "mac": "52:d3:29:c3:ca:7d",
+        "address": "fe80::50d3:29ff:fec3:ca7d",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 17
+      },
+      {
+        "name": "veth8fb09cf",
+        "internal": false,
+        "mac": "9e:db:8c:c3:e6:e1",
+        "address": "fe80::9cdb:8cff:fec3:e6e1",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 19
+      },
+      {
+        "name": "vethc47e156",
+        "internal": false,
+        "mac": "4e:db:71:c4:22:7c",
+        "address": "fe80::4cdb:71ff:fec4:227c",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 21
+      },
+      {
+        "name": "veth8f8afed",
+        "internal": false,
+        "mac": "ca:ab:eb:0b:e3:3e",
+        "address": "fe80::c8ab:ebff:fe0b:e33e",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 23
+      },
+      {
+        "name": "veth19c566a",
+        "internal": false,
+        "mac": "8a:59:56:90:ba:2f",
+        "address": "fe80::8859:56ff:fe90:ba2f",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 25
+      }
+    ],
+    "host": "oleksandr-pc"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000b027f5",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x00000000009d9fc3",
+      "symbol": "node::OnFatalError(char const*, char const*) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000b37dbe",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000b38139",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000ce34f5",
+      "symbol": " [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000ce3b86",
+      "symbol": "v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000cefa1a",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000cf0925",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000cf3338",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000cb9c67",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x0000000000fefb9b",
+      "symbol": "v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [gulp -f ./build/gulpfile.js watch]"
+    },
+    {
+      "pc": "0x00000000013725d9",
+      "symbol": " [gulp -f ./build/gulpfile.js watch]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2178560000,
+    "totalCommittedMemory": 2164750800,
+    "usedMemory": 2152492376,
+    "availableMemory": 38114208,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 32568,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 19922944,
+        "committedMemory": 6790784,
+        "capacity": 9951136,
+        "used": 2407088,
+        "available": 7544048
+      },
+      "old_space": {
+        "memorySize": 2124525568,
+        "committedMemory": 2124330216,
+        "capacity": 2122127392,
+        "used": 2120993240,
+        "available": 1134152
+      },
+      "code_space": {
+        "memorySize": 1998848,
+        "committedMemory": 1905952,
+        "capacity": 1720128,
+        "used": 1720128,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 6819840,
+        "committedMemory": 6660624,
+        "capacity": 2540480,
+        "used": 2540480,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 23826432,
+        "committedMemory": 23826432,
+        "capacity": 23698344,
+        "used": 23698344,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 1204224,
+        "committedMemory": 1204224,
+        "capacity": 1100800,
+        "used": 1100800,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 9951136,
+        "used": 0,
+        "available": 9951136
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 548.88,
+    "kernelCpuSeconds": 56.3891,
+    "cpuConsumptionPercent": 26.2704,
+    "maxRss": 4633542656,
+    "pageFaults": {
+      "IORequired": 66,
+      "IONotRequired": 3895166
+    },
+    "fsActivity": {
+      "reads": 176240,
+      "writes": 51376
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 447.586,
+    "kernelCpuSeconds": 14.8393,
+    "cpuConsumptionPercent": 20.0705,
+    "fsActivity": {
+      "reads": 149880,
+      "writes": 17296
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "SHELL": "/bin/bash",
+    "npm_package_dependencies_voca": "^1.4.0",
+    "SESSION_MANAGER": "local/oleksandr-pc:@/tmp/.ICE-unix/575,unix/oleksandr-pc:/tmp/.ICE-unix/575",
+    "WINDOWID": "58720263",
+    "npm_package_dependencies_qs": "^6.5.2",
+    "COLORTERM": "truecolor",
+    "npm_package_devDependencies_script_loader": "^0.7.2",
+    "npm_package_devDependencies_stream_rename": "^1.0.1",
+    "npm_package_main": "index.js",
+    "npm_package_devDependencies_gulp_rev_replace_relative": "^0.5.8",
+    "XDG_SESSION_PATH": "/org/freedesktop/DisplayManager/Session0",
+    "npm_package_devDependencies_vue_loader": "^15.4.1",
+    "npm_package_devDependencies_gulp_clean": "^0.4.0",
+    "npm_package_devDependencies_gulp_rename": "^1.4.0",
+    "npm_package_dependencies_vue_cookies": "^1.5.13",
+    "npm_package_devDependencies_gulp_postcss": "^8.0.0",
+    "npm_package_devDependencies_node_sass": "^4.9.3",
+    "npm_package_dependencies_deep_for_each": "^2.0.2",
+    "npm_package_dependencies_lodash": "^4.17.5",
+    "npm_package_devDependencies_node_sass_magic_importer": "^5.2.0",
+    "NODE": "/home/oleksandr/.nvm/versions/node/v12.13.0/bin/node",
+    "npm_config_ignore_scripts": "",
+    "npm_package_dependencies_lightgallery_js": "^1.1.3",
+    "npm_package_devDependencies_glob": "^7.1.3",
+    "npm_package_devDependencies_autoprefixer": "^9.1.3",
+    "npm_package_dependencies_pluralize": "^8.0.0",
+    "LC_ADDRESS": "uk_UA.UTF-8",
+    "npm_package_devDependencies_style_loader": "^0.23.0",
+    "npm_package_devDependencies_gulp_rev_delete_original": "^0.2.3",
+    "npm_package_devDependencies_circular_dependency_plugin": "^5.0.2",
+    "npm_package_dependencies_accounting": "^0.4.1",
+    "LC_NAME": "uk_UA.UTF-8",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "npm_package_devDependencies_pretty_error": "^2.1.1",
+    "npm_package_dependencies_filesize": "^3.6.1",
+    "npm_package_private": "true",
+    "npm_package_devDependencies_rev_del": "^1.0.5",
+    "npm_package_devDependencies_eslint_config_crockford": "^2.0.0",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"watch\"],\"original\":[\"watch\"]}",
+    "npm_config_bin_links": "true",
+    "DESKTOP_SESSION": "mate",
+    "LC_MONETARY": "uk_UA.UTF-8",
+    "npm_package_dependencies_vue_deepset": "^0.6.3",
+    "EDITOR": "/usr/bin/nano",
+    "GTK_MODULES": "canberra-gtk-module",
+    "npm_package_dependencies_axios": "^0.18.0",
+    "XDG_SEAT": "seat0",
+    "npm_package_dependencies_lg_zoom_js": "^1.0.1",
+    "MATE_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "PWD": "/home/oleksandr/projects/php72/TC/resources/assets",
+    "npm_config_save_prefix": "^",
+    "npm_package_devDependencies_webpack_assets_manifest": "^3.0.2",
+    "XDG_SESSION_DESKTOP": "mate",
+    "LOGNAME": "oleksandr",
+    "QT_QPA_PLATFORMTHEME": "qt5ct",
+    "npm_package_devDependencies_file_loader": "^2.0.0",
+    "XDG_SESSION_TYPE": "x11",
+    "npm_package_dependencies_vuex": "^3.0.1",
+    "npm_package_devDependencies_cross_env": "^5.2.0",
+    "NODE_ENV": "develop",
+    "_": "/home/oleksandr/projects/php72/TC/resources/assets/node_modules/.bin/cross-env",
+    "XAUTHORITY": "/home/oleksandr/.Xauthority",
+    "npm_package_devDependencies_prettier": "1.14.2",
+    "XDG_GREETER_DATA_DIR": "/var/lib/lightdm-data/oleksandr",
+    "npm_package_dependencies_htmlparser2": "^3.9.2",
+    "npm_package_devDependencies_svg_loader": "^0.0.2",
+    "npm_package_devDependencies_css_loader": "^1.0.0",
+    "GTK2_RC_FILES": "/home/oleksandr/.gtkrc-2.0",
+    "npm_package_devDependencies_webpack_stream": "^5.1.1",
+    "npm_package_devDependencies_extract_text_webpack_plugin": "^3.0.0",
+    "HOME": "/home/oleksandr",
+    "npm_package_scripts_serv": "cross-env NODE_ENV=develop BUILD_MODE=server gulp -f ./build/gulpfile.js serv",
+    "npm_config_version_git_tag": "true",
+    "LANG": "en_US.UTF-8",
+    "LC_PAPER": "uk_UA.UTF-8",
+    "npm_package_devDependencies_webpack": "^4.17.1",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.pdf=00;32:*.ps=00;32:*.txt=00;32:*.patch=00;32:*.diff=00;32:*.log=00;32:*.tex=00;32:*.doc=00;32:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:",
+    "npm_package_dependencies_vuex_persistedstate": "^2.5.4",
+    "XDG_CURRENT_DESKTOP": "MATE",
+    "npm_config_init_license": "MIT",
+    "npm_package_dependencies_uuid": "^3.3.2",
+    "npm_package_version": "1.0.0",
+    "npm_package_dependencies_normalize_css": "^2.3.1",
+    "npm_package_devDependencies_element_theme_chalk": "2.9.1",
+    "npm_package_dependencies_vue_router": "^3.0.1",
+    "VTE_VERSION": "5603",
+    "npm_package_dependencies_element_ui": "2.9.1",
+    "npm_package_scripts_eslint_init": "npm -g i eslint vue-eslint-parser eslint-config-crockford babel-eslint eslint-plugin-vue",
+    "npm_package_devDependencies_dotenv": "^6.0.0",
+    "npm_config_version_commit_hooks": "true",
+    "npm_package_devDependencies_recursive_copy": "^2.0.9",
+    "npm_package_dependencies_babel_plugin_webpack_alias": "^2.1.2",
+    "npm_package_devDependencies_browser_sync": "^2.24.7",
+    "npm_package_devDependencies_dynamic_public_path_webpack_plugin": "^1.0.3",
+    "npm_package_dependencies_express": "^4.16.3",
+    "npm_package_devDependencies_twig": "^1.12.0",
+    "XDG_SEAT_PATH": "/org/freedesktop/DisplayManager/Seat0",
+    "npm_package_devDependencies_gulp_sass": "^4.0.1",
+    "npm_package_dependencies_chunk_progress_webpack_plugin": "^1.0.0",
+    "npm_package_devDependencies_webpack_bundle_analyzer": "^3.0.2",
+    "YAOURT_COLORS": "nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35",
+    "npm_package_devDependencies_cssnano": "^4.1.0",
+    "npm_package_devDependencies_webpack_cleanup_plugin": "^0.5.1",
+    "npm_package_devDependencies_gulp_changed": "^3.2.0",
+    "npm_package_scripts_manifest": "cross-env NODE_ENV=develop gulp -f ./build/gulpfile.js build-manifest",
+    "INIT_CWD": "/home/oleksandr/projects/php72/TC/resources/assets",
+    "npm_package_dependencies_vuescroll": "^4.8.13",
+    "npm_package_devDependencies_gulp_jsbeautifier": "^2.1.2",
+    "npm_package_devDependencies_gulp_twig": "^1.2.0",
+    "npm_lifecycle_script": "cross-env NODE_ENV=develop gulp -f ./build/gulpfile.js watch",
+    "npm_package_description": "Test",
+    "NVM_DIR": "/home/oleksandr/.nvm",
+    "npm_config_version_tag_prefix": "v",
+    "YARN_WRAP_OUTPUT": "false",
+    "npm_package_dependencies_vuex_router_sync": "^5.0.0",
+    "npm_package_dependencies_wolfy87_eventemitter": "^5.2.5",
+    "XDG_SESSION_CLASS": "user",
+    "npm_package_dependencies_md5": "^2.2.1",
+    "TERM": "xterm-256color",
+    "LC_IDENTIFICATION": "uk_UA.UTF-8",
+    "npm_package_name": "assets-builder",
+    "GTK_OVERLAY_SCROLLING": "0",
+    "npm_package_devDependencies_gulp_css_copy_assets": "^0.0.5",
+    "USER": "oleksandr",
+    "npm_package_dependencies_vue_text_mask": "^6.1.2",
+    "npm_package_dependencies_hotkeys_js": "^3.3.7",
+    "npm_package_dependencies_babel_loader": "^8.0.0",
+    "npm_package_dependencies_popper_js": "^1.15.0",
+    "npm_package_dependencies_vue_light_gallery": "^1.0.1",
+    "npm_package_scripts_watch": "cross-env NODE_ENV=develop gulp -f ./build/gulpfile.js watch",
+    "npm_package_scripts_prod": "cross-env NODE_ENV=production gulp -f ./build/gulpfile.js build",
+    "DISPLAY": ":0.0",
+    "npm_lifecycle_event": "watch",
+    "SHLVL": "1",
+    "npm_config_version_git_sign": "",
+    "NVM_CD_FLAGS": "",
+    "npm_package_dependencies__babel_core": "^7.0.0",
+    "npm_config_version_git_message": "v%s",
+    "npm_package_dependencies__babel_plugin_syntax_dynamic_import": "^7.0.0",
+    "npm_package_devDependencies_through2": "^2.0.3",
+    "npm_package_dependencies_animated_scroll_to": "^1.2.2",
+    "LC_TELEPHONE": "uk_UA.UTF-8",
+    "npm_package_dependencies_swiper": "^4.5.0",
+    "npm_package_devDependencies_vue_eslint_parser": "^3.2.2",
+    "LC_MEASUREMENT": "uk_UA.UTF-8",
+    "npm_package_devDependencies_md5_file": "^4.0.0",
+    "XDG_VTNR": "7",
+    "npm_package_dependencies_sprintf_js": "^1.1.1",
+    "npm_package_devDependencies_vinyl_fs": "^3.0.2",
+    "npm_package_dependencies_vue_source": "^1.1.1",
+    "XDG_SESSION_ID": "2",
+    "npm_package_devDependencies_globals_loader": "^0.0.4",
+    "npm_package_devDependencies_sass_loader": "^7.1.0",
+    "npm_package_dependencies_vue_tel_input": "^2.0.8",
+    "npm_config_user_agent": "yarn/1.19.1 npm/? node/v12.13.0 linux x64",
+    "npm_package_devDependencies_colors": "^1.3.2",
+    "npm_package_dependencies_vue": "^2.5.17",
+    "npm_package_dependencies_bootstrap": "^4.1.3",
+    "npm_package_devDependencies_postcss_url": "^8.0.0",
+    "npm_package_dependencies__babel_plugin_proposal_class_properties": "^7.4.4",
+    "npm_execpath": "/home/oleksandr/.nvm/versions/node/v12.13.0/lib/node_modules/yarn/bin/yarn.js",
+    "npm_package_dependencies_dragula": "^3.7.2",
+    "npm_package_dependencies_nprogress": "^0.2.0",
+    "MOZ_PLUGIN_PATH": "/usr/lib/mozilla/plugins",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "npm_package_dependencies_perfect_scrollbar": "^1.4.0",
+    "npm_package_dependencies__ckeditor_ckeditor5": "file:src/js/vendor/ckeditor5",
+    "npm_config_strict_ssl": "true",
+    "npm_package_devDependencies_gulp_watch": "^5.0.1",
+    "npm_package_devDependencies_gulp_sourcemaps": "^2.6.4",
+    "npm_package_devDependencies_vue_template_compiler": "^2.5.17",
+    "LC_TIME": "uk_UA.UTF-8",
+    "npm_package_scripts_dev": "cross-env NODE_ENV=develop gulp -f ./build/gulpfile.js build",
+    "npm_package_dependencies__ckeditor_ckeditor5_vue": "ckeditor/ckeditor5-vue",
+    "npm_package_dependencies__babel_preset_stage_0": "^7.0.0",
+    "npm_package_dependencies__babel_plugin_proposal_private_methods": "^7.4.4",
+    "npm_package_dependencies_vuedraggable": "^2.16.0",
+    "npm_package_devDependencies_optimist": "^0.6.1",
+    "QT_AUTO_SCREEN_SCALE_FACTOR": "0",
+    "npm_package_dependencies_nouislider": "^12.0.0",
+    "npm_package_dependencies_lg_fullscreen_js": "^1.1.0",
+    "npm_package_dependencies__babel_plugin_proposal_optional_chaining": "^7.0.0",
+    "npm_package_devDependencies_chokidar": "^2.0.4",
+    "npm_package_dependencies__babel_cli": "^7.0.0",
+    "PATH": "/tmp/yarn--1581923121017-0.6791076327162848:/home/oleksandr/projects/php72/TC/resources/assets/node_modules/.bin:/home/oleksandr/.config/yarn/link/node_modules/.bin:/home/oleksandr/.yarn/bin:/home/oleksandr/.nvm/versions/node/v12.13.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/oleksandr/.nvm/versions/node/v12.13.0/lib/node_modules/npm/bin/node-gyp-bin:/home/oleksandr/.nvm/versions/node/v12.13.0/bin/node_modules/npm/bin/node-gyp-bin:/home/oleksandr/.nvm/versions/node/v12.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl",
+    "npm_package_devDependencies_gulp_rev_format": "^1.0.4",
+    "npm_package_dependencies_fancy_log": "^1.3.2",
+    "GDMSESSION": "mate",
+    "npm_package_author_name": "Ideil",
+    "npm_package_dependencies_gulp_image": "^4.3.0",
+    "npm_package_dependencies_dayjs": "^1.7.5",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "npm_package_license": "ISC",
+    "MAIL": "/var/spool/mail/oleksandr",
+    "NVM_BIN": "/home/oleksandr/.nvm/versions/node/v12.13.0/bin",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_package_dependencies__babel_plugin_proposal_object_rest_spread": "^7.4.4",
+    "npm_package_devDependencies_mkdirp": "^0.5.1",
+    "npm_config_ignore_optional": "",
+    "npm_package_devDependencies_gulp": "^4.0.0",
+    "QT_SCALE_FACTOR": "1",
+    "npm_package_devDependencies_postcss": "^7.0.2",
+    "npm_node_execpath": "/home/oleksandr/.nvm/versions/node/v12.13.0/bin/node",
+    "npm_package_dependencies__babel_preset_env": "^7.0.0",
+    "npm_package_devDependencies_gulp_rev": "^8.1.1",
+    "npm_package_devDependencies_postcss_loader": "^3.0.0",
+    "LC_NUMERIC": "uk_UA.UTF-8",
+    "OLDPWD": "/home/oleksandr/projects/php72/TC/resources",
+    "npm_package_devDependencies_friendly_errors_webpack_plugin": "^1.6.1",
+    "npm_config_init_version": "1.0.0",
+    "npm_package_devDependencies_webpack_notifier": "^1.5.1"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 65536,
+      "hard": 65536
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 31328,
+      "hard": 31328
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/usr/lib/libdl.so.2",
+    "/usr/lib/libstdc++.so.6",
+    "/usr/lib/libm.so.6",
+    "/usr/lib/libgcc_s.so.1",
+    "/usr/lib/libpthread.so.0",
+    "/usr/lib/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/home/oleksandr/projects/php72/TC/resources/assets/node_modules/node-sass/vendor/linux-x64-72/binding.node"
+  ]
+}
